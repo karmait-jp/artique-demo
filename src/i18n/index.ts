@@ -9,8 +9,11 @@ export function useLocale() {
  const { state } = useAuction();
  const lang = state.language;
  const locale = { fr:'fr-FR', en:'en-GB', ja:'ja-JP' }[lang];
- const formatter = useMemo(() => new Intl.NumberFormat(locale, { style:'currency', currency:'EUR', minimumFractionDigits:0, maximumFractionDigits:2 }), [locale]);
- const money = useCallback((n: number) => formatter.format(n), [formatter]);
+ const formatters = useMemo(() => ({
+  whole: new Intl.NumberFormat(locale, { style:'currency', currency:'EUR', minimumFractionDigits:0, maximumFractionDigits:0 }),
+  fractional: new Intl.NumberFormat(locale, { style:'currency', currency:'EUR', minimumFractionDigits:2, maximumFractionDigits:2 }),
+ }), [locale]);
+ const money = useCallback((n: number) => (Number.isInteger(n) ? formatters.whole : formatters.fractional).format(n), [formatters]);
  const t = useCallback((key: TranslationKey, vars?: Record<string,string|number>) => {
   let value: string = dictionaries[lang][key];
   if(vars) Object.entries(vars).forEach(([k,v])=>{value=value.replaceAll(`{${k}}`,String(v));});

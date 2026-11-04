@@ -18,7 +18,7 @@ const screenshot=async name=>{const shot=await send('Page.captureScreenshot',{fo
 try{
  await mkdir('.shots',{recursive:true});await send('Page.enable');await send('Runtime.enable');
  await send('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:true});await send('Emulation.setTimezoneOverride',{timezoneId:'Asia/Tokyo'});
- await send('Page.addScriptToEvaluateOnNewDocument',{source:"Object.defineProperty(navigator,'language',{get:()=> 'fr-FR'});"});
+ await send('Page.addScriptToEvaluateOnNewDocument',{source:"Object.defineProperty(navigator,'languages',{get:()=> ['fr-FR','en-GB']});Object.defineProperty(navigator,'language',{get:()=> 'en-GB'});"});
  await send('Page.navigate',{url:'http://127.0.0.1:4173/artique-demo/'});await pause(900);await evaluate('localStorage.clear()');await send('Page.reload');await pause(800);await evaluate('document.fonts.ready');
  assert.equal(await evaluate('document.documentElement.lang'),'fr','French default');
  assert.equal(await evaluate('document.querySelectorAll(".sale-row").length'),4);

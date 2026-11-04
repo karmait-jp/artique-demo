@@ -16,8 +16,8 @@
    "group": "business",
    "label_en": "Legal model of the auctions",
    "label_ja": "オークションの法的形態",
-   "value_en": "Start as an electronic auction brokerage (courtage aux enchères par voie électronique): ARTIQUE connects sellers and bidders and never takes title. Moving to a declared auction operator (OVV) with a commissaire-priseur is a later option. To be validated by a French lawyer.",
-   "value_ja": "まず「電子的な競り仲介（courtage aux enchères par voie électronique）」として開始。ARTIQUE は売主と入札者を仲介し、所有権は持たない。宣言制のオークション運営者（OVV）＋競売人への移行は後の選択肢。仏弁護士の確認が必要。"
+   "value_en": "The demo is built as an electronic auction brokerage (courtage aux enchères par voie électronique): ARTIQUE connects sellers and bidders and never takes title. Under French commercial law (art. L321-3) this status requires that ARTIQUE neither declares a lot sold to the highest bidder nor intervenes in describing the objects, which conflicts with specialist cataloguing. The options are: descriptions published in the seller's name with ARTIQUE only proposing wording; a partnership with a declared auction house (OVV) that conducts the sales; or ARTIQUE's own OVV registration with a qualified auctioneer. To be decided with a French lawyer.",
+   "value_ja": "デモは「電子的な競り仲介（courtage aux enchères par voie électronique）」として作成。ARTIQUE は売主と入札者を仲介し、所有権は持たない。仏商法 L321-3 ではこの形態は「最高額入札者への落札宣言をしない」「物品の記述に介入しない」ことが条件で、専門家によるカタログ記述と衝突する。選択肢は、記述を出品者名義で公開し ARTIQUE は案を出すだけ／宣言制のオークション会社（OVV）と提携してその会社が落札を行う／自前で OVV 登録し有資格の競売人を置く、の3つ。仏弁護士と決める。"
   },
   {
    "id": "A3",
@@ -56,8 +56,8 @@
    "group": "business",
    "label_en": "Cataloguing standard",
    "label_ja": "カタログ記述の基準",
-   "value_en": "Attribution wording follows the French Décret Marcus vocabulary (attribué à, école de, signé, d'après...). The AI drafts, a specialist signs off. Every lot carries a condition report and a provenance line.",
-   "value_ja": "帰属の表現は仏「マルキュス政令」の語彙（attribué à, école de, signé, d'après など）に従う。AI が下書きし専門家が承認。全ロットに状態報告と来歴を付ける。"
+   "value_en": "Attribution wording follows the French Décret Marcus vocabulary (attribué à, école de, signé, d'après...). The AI drafts, a specialist signs off. Every lot carries a condition report and a provenance line. If the brokerage model is kept, the final text is published under the seller's responsibility.",
+   "value_ja": "帰属の表現は仏「マルキュス政令」の語彙（attribué à, école de, signé, d'après など）に従う。AI が下書きし専門家が承認。全ロットに状態報告と来歴を付ける。仲介型を採る場合、最終的な記述は出品者の責任で公開する。"
   },
   {
    "id": "A8",

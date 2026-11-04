@@ -5,3 +5,6 @@ dist/
 .shots/
 
 *.tsbuildinfo
+.serve/
+.chrome-*/
+.serve.log

@@ -65,4 +65,33 @@ const order = e.makeOrder(lots[0], { ...reached, endsAt: 1 }, 'france', 'card', 
 assert.equal(order.hammer, 300);
 assert.equal(order.deadline, 1 + rules.paymentDays * 86_400_000);
 assert.equal(order.total, costs(300, lots[0].shipping.france).total);
-console.log('Auction verification passed: rule boundaries, proxy resolution and ties, reserves, closing, anti-sniping, seeded histories, overdue rivals, and checkout eligibility and totals.');
+const navigatorDescriptor = Object.getOwnPropertyDescriptor(globalThis, 'navigator');
+const storageDescriptor = Object.getOwnPropertyDescriptor(globalThis, 'localStorage');
+let savedState = null;
+try {
+  Object.defineProperty(globalThis, 'localStorage', { configurable: true, value: { getItem: () => savedState } });
+  for (const [languages, language, expected] of [
+    [['fr-CA', 'en-GB'], 'ja-JP', 'fr'],
+    [['ja-JP', 'fr-FR'], 'en-GB', 'ja'],
+    [['de-DE', 'fr-FR'], 'fr-FR', 'en'],
+    [['en-US', 'ja-JP'], 'ja-JP', 'en'],
+    [[], 'fr-FR', 'fr'],
+    [[], 'ja-JP', 'ja'],
+    [[], undefined, 'en'],
+  ]) {
+    Object.defineProperty(globalThis, 'navigator', { configurable: true, value: { languages, language } });
+    assert.equal(e.loadState().language, expected, `Initial language for ${languages[0] ?? language}`);
+  }
+  savedState = JSON.stringify(state);
+  Object.defineProperty(globalThis, 'navigator', { configurable: true, value: { languages: ['ja-JP'], language: 'ja-JP' } });
+  assert.equal(e.loadState().language, 'fr', 'Stored language takes precedence over browser preferences');
+  savedState = null;
+  delete globalThis.navigator;
+  assert.equal(e.loadState().language, 'en', 'Missing navigator defaults to English');
+} finally {
+  if (navigatorDescriptor) Object.defineProperty(globalThis, 'navigator', navigatorDescriptor);
+  else delete globalThis.navigator;
+  if (storageDescriptor) Object.defineProperty(globalThis, 'localStorage', storageDescriptor);
+  else delete globalThis.localStorage;
+}
+console.log('Auction verification passed: rule boundaries, proxy resolution and ties, reserves, closing, anti-sniping, seeded histories, overdue rivals, checkout eligibility and totals, and initial and stored languages.');

@@ -135,7 +135,7 @@ export function makeOrder(lot: Lot, state: LotState, shipping: Shipping, method:
   };
 }
 export function loadState(): AuctionState {
-  const browserLanguage = typeof navigator === 'undefined' ? 'en' : navigator.language.toLowerCase();
+  const browserLanguage = typeof navigator === 'undefined' ? 'en' : (navigator.languages?.[0] ?? navigator.language ?? 'en').toLowerCase();
   const language: Lang = browserLanguage.startsWith('fr') ? 'fr' : browserLanguage.startsWith('ja') ? 'ja' : 'en';
   try {
     const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null') as AuctionState | null;
