@@ -124,7 +124,7 @@ export const lots: Lot[] = [
       "world": 65
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/56683",
-    "creditLine": "Gift of Francis M. Weld, 1948"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
   },
   {
     "id": "A-002",
@@ -178,7 +178,7 @@ export const lots: Lot[] = [
       "world": 65
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/37193",
-    "creditLine": "The Francis Lathrop Collection, Purchase, Frederick C. Hewitt Fund, 1911"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
   },
   {
     "id": "A-003",
@@ -232,7 +232,7 @@ export const lots: Lot[] = [
       "world": 65
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/78617",
-    "creditLine": "Purchase, Mary and James G. Wallach Foundation Gift, 2013"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
   },
   {
     "id": "A-004",
@@ -286,7 +286,7 @@ export const lots: Lot[] = [
       "world": 65
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/54864",
-    "creditLine": "H. O. Havemeyer Collection, Bequest of Mrs. H. O. Havemeyer, 1929"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
   },
   {
     "id": "A-005",
@@ -340,7 +340,7 @@ export const lots: Lot[] = [
       "world": 120
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/52251",
-    "creditLine": "The Harry G. C. Packard Collection of Asian Art, Gift of Harry G. C. Packard, and Purchase, Fletcher, Rogers, Harris Brisbane Dick, and Louis V. Bell Funds, Joseph Pulitzer Bequest, and The Annenberg Fund Inc. Gift, 1975"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
   },
   {
     "id": "A-006",
@@ -394,7 +394,7 @@ export const lots: Lot[] = [
       "world": 120
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/50328",
-    "creditLine": "The Harry G. C. Packard Collection of Asian Art, Gift of Harry G. C. Packard, and Purchase, Fletcher, Rogers, Harris Brisbane Dick, and Louis V. Bell Funds, Joseph Pulitzer Bequest, and The Annenberg Fund Inc. Gift, 1975"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
   },
   {
     "id": "A-007",
@@ -448,7 +448,7 @@ export const lots: Lot[] = [
       "world": 120
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/48822",
-    "creditLine": "Edward C. Moore Collection, Bequest of Edward C. Moore, 1891"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
   },
   {
     "id": "A-008",
@@ -502,7 +502,7 @@ export const lots: Lot[] = [
       "world": 65
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/59356",
-    "creditLine": "Gift of Mrs. Russell Sage, 1910"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
   },
   {
     "id": "A-009",
@@ -556,7 +556,7 @@ export const lots: Lot[] = [
       "world": 65
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/59414",
-    "creditLine": "Gift of Mrs. Russell Sage, 1910"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
   },
   {
     "id": "A-010",
@@ -610,7 +610,7 @@ export const lots: Lot[] = [
       "world": 120
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/58507",
-    "creditLine": "Edward C. Moore Collection, Bequest of Edward C. Moore, 1891"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
   },
   {
     "id": "A-011",
@@ -664,7 +664,7 @@ export const lots: Lot[] = [
       "world": 120
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/58510",
-    "creditLine": "Edward C. Moore Collection, Bequest of Edward C. Moore, 1891"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
   },
   {
     "id": "A-012",
@@ -718,7 +718,7 @@ export const lots: Lot[] = [
       "world": 120
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/24623",
-    "creditLine": "The Howard Mansfield Collection, Gift of Howard Mansfield, 1936"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
   },
   {
     "id": "B-001",
@@ -772,7 +772,7 @@ export const lots: Lot[] = [
       "world": 120
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/42301",
-    "creditLine": "Gift of Sadajiro Yamanaka, 1911"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
   },
   {
     "id": "B-002",
@@ -826,7 +826,7 @@ export const lots: Lot[] = [
       "world": 120
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/45432",
-    "creditLine": "The Harry G. C. Packard Collection of Asian Art, Gift of Harry G. C. Packard, and Purchase, Fletcher, Rogers, Harris Brisbane Dick, and Louis V. Bell Funds, Joseph Pulitzer Bequest, and The Annenberg Fund Inc. Gift, 1975"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
   },
   {
     "id": "B-003",
@@ -880,7 +880,7 @@ export const lots: Lot[] = [
       "world": 120
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/76452",
-    "creditLine": "Gift of David Griffin, in honor of James C. Y. Watt, 2010"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
   },
   {
     "id": "B-004",
@@ -934,7 +934,7 @@ export const lots: Lot[] = [
       "world": 120
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/41925",
-    "creditLine": "Gift of Heber R. Bishop, 1902"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
   },
   {
     "id": "B-005",
@@ -988,7 +988,7 @@ export const lots: Lot[] = [
       "world": 120
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/42528",
-    "creditLine": "Rogers Fund, 1918"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
   },
   {
     "id": "B-006",
@@ -1042,7 +1042,7 @@ export const lots: Lot[] = [
       "world": 120
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/934485",
-    "creditLine": "Gift of Serga Nadler, in memory of Daniel Nadler, 2026"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
   },
   {
     "id": "B-007",
@@ -1096,7 +1096,7 @@ export const lots: Lot[] = [
       "world": 120
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/39599",
-    "creditLine": "Gift of Mr. and Mrs. Frederick P. Rose, 1996"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
   },
   {
     "id": "B-008",
@@ -1150,7 +1150,7 @@ export const lots: Lot[] = [
       "world": 65
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/457783",
-    "creditLine": "Gift of Terence McInerney, 2012"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
   },
   {
     "id": "B-009",
@@ -1204,7 +1204,7 @@ export const lots: Lot[] = [
       "world": 120
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/74426",
-    "creditLine": "Purchase, Friends of Asian Art Gifts, 2008"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
   },
   {
     "id": "B-010",
@@ -1258,7 +1258,7 @@ export const lots: Lot[] = [
       "world": 120
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/39268",
-    "creditLine": "Purchase, The J. H. W. Thompson Foundation Gift, 1996"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
   },
   {
     "id": "C-001",
@@ -1312,7 +1312,7 @@ export const lots: Lot[] = [
       "world": 65
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/266362",
-    "creditLine": "Rogers Fund, 1957, transferred from the Library"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
   },
   {
     "id": "C-002",
@@ -1366,7 +1366,7 @@ export const lots: Lot[] = [
       "world": 65
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/285902",
-    "creditLine": "Gilman Collection, Purchase, Robert Rosenkranz Gift, 2005"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
   },
   {
     "id": "C-003",
@@ -1420,7 +1420,7 @@ export const lots: Lot[] = [
       "world": 65
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/728305",
-    "creditLine": "Gilman Collection, Purchase, Cynthia Hazen Polsky Gift, 2005"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
   },
   {
     "id": "C-004",
@@ -1474,7 +1474,7 @@ export const lots: Lot[] = [
       "world": 65
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/728169",
-    "creditLine": "Gilman Collection, Purchase, Cynthia Hazen Polsky Gift, 2005"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
   },
   {
     "id": "C-005",
@@ -1528,7 +1528,7 @@ export const lots: Lot[] = [
       "world": 65
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/764802",
-    "creditLine": "The Horace W. Goldsmith Foundation Fund, through Joyce and Robert Menschel, 2017"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
   },
   {
     "id": "C-006",
@@ -1582,7 +1582,7 @@ export const lots: Lot[] = [
       "world": 65
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/728172",
-    "creditLine": "Gilman Collection, Purchase, Cynthia Hazen Polsky Gift, 2005"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
   },
   {
     "id": "C-007",
@@ -1636,7 +1636,7 @@ export const lots: Lot[] = [
       "world": 65
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/285442",
-    "creditLine": "Funds from various donors, 2004"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
   },
   {
     "id": "D-001",
@@ -1690,7 +1690,7 @@ export const lots: Lot[] = [
       "world": 120
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/55974",
-    "creditLine": "Bequest of Benjamin Altman, 1913"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
   },
   {
     "id": "D-002",
@@ -1744,7 +1744,7 @@ export const lots: Lot[] = [
       "world": 220
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/829395",
-    "creditLine": "Mary and Cheney Cowles Collection, Gift of Mary and Cheney Cowles, 2019"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
   },
   {
     "id": "D-003",
@@ -1798,7 +1798,7 @@ export const lots: Lot[] = [
       "world": 65
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/54303",
-    "creditLine": "The Francis Lathrop Collection, Purchase, Frederick C. Hewitt Fund, 1911"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
   },
   {
     "id": "D-004",
@@ -1852,7 +1852,7 @@ export const lots: Lot[] = [
       "world": 120
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/771056",
-    "creditLine": "Gift of Helene Fortunoff and Robert Grossman, 2017"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
   },
   {
     "id": "D-005",
@@ -1906,7 +1906,7 @@ export const lots: Lot[] = [
       "world": 120
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/826007",
-    "creditLine": "Bequest of Mrs. Charles Wrightsman, 2019"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
   },
   {
     "id": "D-006",
@@ -1960,7 +1960,7 @@ export const lots: Lot[] = [
       "world": 220
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/70769",
-    "creditLine": "Gift of Stanley Love, 1984"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
   },
   {
     "id": "D-007",
@@ -2014,7 +2014,7 @@ export const lots: Lot[] = [
       "world": 220
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/83924",
-    "creditLine": "Gift of Joseph L. Brotherton, 1985"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
   }
 ];
 
