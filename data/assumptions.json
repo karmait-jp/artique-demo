@@ -8,8 +8,8 @@
    "group": "business",
    "label_en": "Operating entity",
    "label_ja": "運営法人",
-   "value_en": "A separate French company (SAS) in Paris created for ARTIQUE, not housed in an existing third party's company. Engineering and site operations are run from Japan under contract. Incorporation cost is being checked.",
-   "value_ja": "ARTIQUE 専用にパリでフランス法人（SAS）を新設する。既存の第三者の会社には置かない。技術・サイト運営は日本から業務委託。設立費用は調査中。",
+   "value_en": "A separate French company (SAS) in Paris created for ARTIQUE, not housed in an existing third party's company. Engineering and site operations are run from Japan under contract. Mandatory incorporation fees are about €250 excl. VAT (registration, legal notice, beneficial-owner filing) with €1 minimum capital; a lawyer or accountant adds roughly €300–2,500, and full-service packages for foreign founders run to about €8,000. A non-resident president is possible, but opening the capital-deposit bank account without a French-resident director can be slow.",
+   "value_ja": "ARTIQUE 専用にパリでフランス法人（SAS）を新設する。既存の第三者の会社には置かない。技術・サイト運営は日本から業務委託。設立の法定費用は約 €250（税抜。登記、法定公告、実質的支配者の届出）、最低資本金は €1。弁護士や会計士を使うと €300〜2,500 程度が加わり、外国人向けのフルサービスは約 €8,000。非居住者が社長になることは可能だが、フランス在住の役員がいないと資本金預託の銀行口座の開設に時間がかかることがある。",
    "status": "decided"
   },
   {
@@ -26,8 +26,8 @@
    "group": "business",
    "label_en": "Brand and domain",
    "label_ja": "ブランド名とドメイン",
-   "value_en": "Brand ARTIQUE kept for now. Trademark (INPI / EUIPO) and domains (.com, .fr, .art) to be checked before incorporation; the name changes if it is taken.",
-   "value_ja": "ブランドは当面 ARTIQUE。商標（INPI／EUIPO）とドメイン（.com、.fr、.art）を法人設立前に確認し、取られていれば改名する。",
+   "value_en": "The brand ARTIQUE is at risk: artique.fr is already used by a French AI-prototyping company, and artique.com, .art and .net are registered; only .eu, .paris and .io are free. No EU or French trademark 'ARTIQUE' was found in web-indexed records (US marks exist in other classes; 'ARTIQO' is an EU mark), but the official INPI and EUIPO searches must be run before incorporation. A different or more distinctive name is likely to be needed.",
+   "value_ja": "ブランド ARTIQUE には支障がある。artique.fr はフランスの AI プロトタイプ生成サービスが使用中で、artique.com／.art／.net も登録済み。空いているのは .eu、.paris、.io のみ。EU・フランスの商標「ARTIQUE」は公開情報では見つからなかった（米国に別分野の登録、EU に「ARTIQO」あり）が、INPI と EUIPO の正式な検索を法人設立前に行う必要がある。別の名前か、より識別力のある形にする可能性が高い。",
    "status": "open"
   },
   {
@@ -170,8 +170,8 @@
    "group": "auction",
    "label_en": "Seller payout",
    "label_ja": "出品者への支払",
-   "value_en": "Sellers are paid only after the buyer confirms receipt, never on shipment alone. Confirmations received by the end of a month are paid together on the 15th of the following month. A deemed-receipt rule (tracked delivery plus no complaint within 14 days) is still needed because the payment provider requires payout within 90 days; to be confirmed.",
-   "value_ja": "出品者への支払は買主の受領確認後のみで、発送だけでは支払わない。月末までに受領確認があった分を翌月15日にまとめて送金する。決済事業者は90日以内の送金を求めるため、「追跡で配達済み＋14日間異議なし」を受領とみなす規定が別途必要。要確認。",
+   "value_en": "Sellers are paid only after receipt, never on shipment alone. Confirmations received by the end of a month are paid together on the 15th of the following month. Deemed receipt: tracked delivery plus 14 days without a complaint counts as confirmation (Catawiki releases funds 3 days after tracked delivery), which keeps every payout inside the payment provider's 90-day limit.",
+   "value_ja": "出品者への支払は受領後のみで、発送だけでは支払わない。月末までに受領確認があった分を翌月15日にまとめて送金する。みなし受領: 追跡で配達済みかつ14日間異議がなければ受領確認とみなす（Catawiki は追跡配達の3日後に送金）。これで送金は決済事業者の90日の期限に収まる。",
    "status": "decided"
   },
   {
@@ -188,8 +188,8 @@
    "group": "auction",
    "label_en": "Right of withdrawal and returns",
    "label_ja": "撤回権と返品",
-   "value_en": "EU law: a consumer buying from a professional seller has a 14-day right of withdrawal; private-seller lots carry only the 'as described' guarantee. Stated on every lot page. (At launch there are no professional sellers, see A5.)",
-   "value_ja": "EU 法どおり、業者出品を消費者が落札した場合は14日間の撤回権、個人出品は「記述どおり」保証のみ。全ロットページに明記。（立ち上げ時は業者出品なし、A5 参照。）",
+   "value_en": "EU law: a consumer buying from a professional seller has a 14-day right of withdrawal; private-seller lots carry only the 'as described' guarantee. Stated on every lot page. Since 19 June 2026 professional sellers must also offer the EU 'withdraw from contract here' button; ARTIQUE will provide it when professional sellers are admitted and will check with counsel whether its own buyer fee requires one. (At launch there are no professional sellers, see A5.)",
+   "value_ja": "EU 法どおり、業者出品を消費者が落札した場合は14日間の撤回権、個人出品は「記述どおり」保証のみ。全ロットページに明記。2026年6月19日からは業者出品に EU の「ここで契約を解除」ボタンの設置義務もあるため、業者出品を受け入れる段階で ARTIQUE が実装し、自社の買主手数料にも必要かは弁護士に確認する。（立ち上げ時は業者出品なし、A5 参照。）",
    "status": "decided"
   },
   {
@@ -197,8 +197,8 @@
    "group": "auction",
    "label_en": "Bidder registration and identity checks",
    "label_ja": "入札者登録と本人確認",
-   "value_en": "Per-lot maximum of €9,999 for bids and buy-now prices, so that the €10,000 anti-money-laundering threshold for the art market is never reached and identity verification is not required at launch. Email, phone and a card on file before the first bid. Linked purchases by one buyer are monitored.",
-   "value_ja": "入札と即決価格は1ロット €9,999 を上限とし、美術品市場のマネロン対策の閾値 €10,000 に届かないようにする。これにより立ち上げ時の本人確認は不要。初回入札前にメール・電話・カード登録。同一買主の関連取引は監視する。",
+   "value_en": "Per-lot maximum of €9,999 for bids and buy-now prices. This keeps single transactions under the €10,000 anti-money-laundering threshold for the art market, but linked transactions count too: cumulative purchases by one buyer, split payments and series of lots from one seller. ARTIQUE therefore tracks cumulative amounts and requires identity verification when a buyer's or seller's linked transactions reach €10,000; sanctions-list screening applies from the first euro. Email, phone and a card on file before the first bid.",
+   "value_ja": "入札と即決価格は1ロット €9,999 を上限とする。単独の取引は美術品市場のマネロン対策の閾値 €10,000 を下回るが、関連取引（同一買主の累計購入、分割払い、同一出品者の一連のロット）も合算される。そのため ARTIQUE は累計額を追跡し、買主または出品者の関連取引が €10,000 に達したら本人確認を求める。制裁リストの照合は最初の1ユーロから行う。初回入札前にメール・電話・カード登録。",
    "status": "decided"
   },
   {
@@ -215,8 +215,8 @@
    "group": "payment",
    "label_en": "Payment provider",
    "label_ja": "決済事業者",
-   "value_en": "Stripe (Connect) is confirmed usable for a French company; PayPal is an alternative or additional buyer method. The demo is not connected; the checkout is a mock.",
-   "value_ja": "Stripe（Connect）はフランス法人で利用可能と確認。PayPal は代替または追加の支払手段。デモは未接続で決済画面はモック。",
+   "value_en": "Stripe (Connect) is confirmed usable for a French company and is the primary provider (EEA cards 1.5% + €0.25). PayPal can be added later: its French merchant rate is 2.90% + €0.35 and its multiparty platform needs PayPal's approval. The demo is not connected; the checkout is a mock.",
+   "value_ja": "Stripe（Connect）はフランス法人で利用可能と確認し、主な決済事業者とする（EEA カード 1.5%＋€0.25）。PayPal は後から追加できる（フランスの加盟店料率は 2.90%＋€0.35、マーケットプレイス向け機能は PayPal の承認が必要）。デモは未接続で決済画面はモック。",
    "status": "decided"
   },
   {

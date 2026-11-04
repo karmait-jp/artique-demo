@@ -1,11 +1,14 @@
 import type { Localized } from '../data/lots';
+import en from './en';
+import fr from './fr';
+import ja from './ja';
 
 const l = (fr: string, en: string, ja: string): Localized => ({ fr, en, ja });
 
 export const frenchAssumptions: Record<string, { label: string; value: string }> = {
   "A1": {
     "label": "Société exploitante",
-    "value": "Une SAS française distincte sera créée à Paris pour ARTIQUE, sans rattachement à la société d’un tiers. Le développement et l’exploitation technique seront assurés depuis le Japon sous contrat. Le coût de constitution est à l’étude."
+    "value": "Une SAS française distincte sera créée à Paris pour ARTIQUE, sans rattachement à la société d’un tiers. Le développement et l’exploitation technique seront assurés depuis le Japon sous contrat. Les frais obligatoires de constitution s’élèvent à environ 250 € HT (immatriculation, annonce légale, déclaration des bénéficiaires effectifs), avec un capital minimum de 1 €. L’intervention d’un avocat ou d’un expert-comptable ajoute environ 300 à 2 500 € ; les offres d’accompagnement complet destinées aux fondateurs étrangers atteignent environ 8 000 €. Un président non résident est possible, mais l’ouverture du compte de dépôt du capital peut être longue en l’absence de dirigeant résidant en France."
   },
   "A2": {
     "label": "Cadre juridique des ventes",
@@ -13,7 +16,7 @@ export const frenchAssumptions: Record<string, { label: string; value: string }>
   },
   "A3": {
     "label": "Marque et nom de domaine",
-    "value": "La marque ARTIQUE est conservée à ce stade. Les marques (INPI / EUIPO) et les domaines (.com, .fr, .art) seront vérifiés avant la constitution ; le nom changera s’il est déjà pris."
+    "value": "Le nom ARTIQUE présente un risque : artique.fr est déjà utilisé par une société française de prototypage par IA, et artique.com, .art et .net sont enregistrés ; seuls .eu, .paris et .io sont disponibles. Aucune marque « ARTIQUE » française ou de l’Union européenne n’a été trouvée dans les données indexées sur le Web (des marques américaines existent dans d’autres classes ; « ARTIQO » est une marque de l’Union européenne), mais les recherches officielles auprès de l’INPI et de l’EUIPO doivent être menées avant la constitution. Un autre nom, ou un nom plus distinctif, sera probablement nécessaire."
   },
   "A4": {
     "label": "Marché, langues, monnaie et fuseau horaire",
@@ -73,7 +76,7 @@ export const frenchAssumptions: Record<string, { label: string; value: string }>
   },
   "B9": {
     "label": "Règlement du vendeur",
-    "value": "Le vendeur est payé uniquement après confirmation de réception par l’acheteur, jamais sur la seule expédition. Les confirmations reçues avant la fin du mois sont réglées ensemble le 15 du mois suivant. Une règle de réception présumée, livraison suivie et absence de réclamation pendant 14 jours, reste à confirmer, car le prestataire impose un versement sous 90 jours."
+    "value": "Le vendeur est payé uniquement après réception, jamais sur la seule expédition. Les confirmations reçues avant la fin du mois sont réglées ensemble le 15 du mois suivant. Réception présumée : la livraison confirmée par le suivi, suivie de 14 jours sans réclamation, vaut confirmation de réception (Catawiki débloque les fonds 3 jours après la livraison suivie), ce qui maintient chaque règlement dans le délai de 90 jours imposé par le prestataire de paiement."
   },
   "B10": {
     "label": "Livraison",
@@ -81,15 +84,15 @@ export const frenchAssumptions: Record<string, { label: string; value: string }>
   },
   "B11": {
     "label": "Droit de rétractation et retours",
-    "value": "Un consommateur achetant auprès d’un professionnel bénéficie du droit européen de rétractation de 14 jours. Les lots de particuliers relèvent uniquement de la garantie « conforme à la description ». Cette distinction figure sur chaque lot. Aucun vendeur professionnel au lancement, voir A5."
+    "value": "Le droit européen accorde au consommateur achetant auprès d’un professionnel un droit de rétractation de 14 jours. Les lots de particuliers relèvent uniquement de la garantie « conforme à la description ». Cette distinction figure sur chaque lot. Depuis le 19 juin 2026, les vendeurs professionnels doivent également proposer le bouton européen « Se rétracter du contrat ici » ; ARTIQUE le mettra à disposition lorsque les professionnels seront admis et vérifiera avec un conseil juridique si ses propres frais acheteur nécessitent aussi un tel bouton. Aucun vendeur professionnel au lancement, voir A5."
   },
   "B12": {
-    "label": "Inscription et plafond par lot",
-    "value": "Plafond de 9 999 € par lot pour les enchères et les achats immédiats, en deçà du seuil de lutte contre le blanchiment du marché de l’art. Aucune pièce d’identité demandée au lancement. Adresse électronique, téléphone et carte enregistrés avant la première enchère. Les achats liés d’un même acheteur sont surveillés."
+    "label": "Inscription des enchérisseurs et vérification d’identité",
+    "value": "Plafond de 9 999 € par lot pour les enchères et les achats immédiats. Chaque transaction reste ainsi sous le seuil de 10 000 € de lutte contre le blanchiment applicable au marché de l’art, mais les transactions liées sont également prises en compte : achats cumulés d’un même acheteur, paiements fractionnés et série de lots d’un même vendeur. ARTIQUE suit donc les montants cumulés et exige une vérification d’identité lorsque les transactions liées d’un acheteur ou d’un vendeur atteignent 10 000 € ; le contrôle des listes de sanctions s’applique dès le premier euro. Adresse électronique, téléphone et carte enregistrés avant la première enchère."
   },
   "C1": {
     "label": "Prestataire de paiement",
-    "value": "Stripe Connect est confirmé comme utilisable pour une société française. PayPal est une alternative ou un moyen de paiement supplémentaire. La démonstration n’est pas connectée ; le paiement est simulé."
+    "value": "Stripe Connect est confirmé comme utilisable pour une société française et constitue le prestataire principal (cartes de l’EEE : 1,5 % + 0,25 €). PayPal pourra être ajouté ultérieurement : son tarif marchand en France est de 2,90 % + 0,35 €, et sa solution pour plateformes multipartites nécessite l’accord de PayPal. La démonstration n’est pas connectée ; le paiement est simulé."
   },
   "C2": {
     "label": "Circuit des fonds",
@@ -181,8 +184,8 @@ export const legalSections = [
   { title: l('Cookies et stockage local', 'Cookies and local storage', 'Cookieとローカル保存'), body: l('La démo utilise uniquement le stockage local nécessaire à la langue, aux enchères et à vos choix. Aucun outil de mesure d’audience ni traceur publicitaire. Les polices Google Fonts sont chargées à distance. La réinitialisation efface la simulation.', 'The demo uses essential local storage for language, bids and your choices. There are no analytics or advertising trackers. Google Fonts load remotely. Reset clears the simulation.', 'デモでは言語、入札、選択内容に必要なローカル保存のみを使います。アクセス解析や広告追跡はありません。Google Fontsは外部から読み込みます。リセットでシミュレーションを消去できます。') },
 ];
 export const additionalTerms = [
-  { title: l('Plafond par lot', 'Price cap', 'ロットごとの上限'), body: l('Enchères, plafonds automatiques et prix d’achat immédiat sont limités à 9 999 € par lot.', 'Bids, proxy maxima and buy-now prices are capped at €9,999 per lot.', '入札、自動入札の上限、即決価格は1ロット€9,999までです。') },
+  { title: l('Plafond par lot', 'Price cap', 'ロットごとの上限'), body: l(`Enchères, plafonds automatiques et prix d’achat immédiat sont limités à 9 999 € par lot. ${fr.linkedTransactionsText}`, `Bids, proxy maxima and buy-now prices are capped at €9,999 per lot. ${en.linkedTransactionsText}`, `入札、自動入札の上限、即決価格は1ロット€9,999までです。${ja.linkedTransactionsText}`) },
   { title: l('Achat immédiat', 'Buy-now', '即決購入'), body: l('Lorsqu’il est proposé, l’achat immédiat clôture le lot au prix fixé par le vendeur, tant que le lot est ouvert et que l’enchère actuelle reste inférieure.', 'Where offered, buy-now closes the lot at the seller’s stated price while the lot is open and the current bid is below that price.', 'ロットが終了前で現在の入札が即決価格未満の場合、提示された即決価格で購入するとその場で終了します。') },
   { title: l('Clôture sans prolongation', 'No extension', '延長なし'), body: l('La clôture est fixe. Une enchère reçue dans les dernières secondes ne prolonge pas le délai.', 'Closing is fixed. A bid in the last seconds does not extend the closing time.', '終了時刻は固定です。終了直前の入札でも延長しません。') },
-  { title: l('Calendrier de règlement des vendeurs', 'Payout schedule', '出品者への支払日程'), body: l('Le vendeur est payé uniquement après confirmation de réception par l’acheteur. Les confirmations reçues avant la fin du mois sont réglées ensemble le 15 du mois suivant, par le prestataire.', 'Sellers are paid only after the buyer confirms receipt. Confirmations received by month-end are paid together on the 15th of the following month through the payment provider.', '買主の受領確認後のみ支払います。月末までの確認分を翌月15日に決済事業者からまとめて送金します。') },
+  { title: l('Calendrier de règlement des vendeurs', 'Payout schedule', '出品者への支払日程'), body: l('Le vendeur est payé uniquement après confirmation de réception par l’acheteur. Les confirmations reçues avant la fin du mois sont réglées ensemble le 15 du mois suivant, par le prestataire. La livraison confirmée par le suivi, suivie de 14 jours sans réclamation, vaut confirmation de réception.', 'Sellers are paid only after the buyer confirms receipt. Confirmations received by month-end are paid together on the 15th of the following month through the payment provider. Tracked delivery followed by 14 days without a complaint counts as confirmation of receipt.', '買主の受領確認後のみ支払います。月末までの確認分を翌月15日に決済事業者からまとめて送金します。配送追跡で配達済みとなり、その後14日間異議がなければ、受領確認とみなします。') },
 ];
