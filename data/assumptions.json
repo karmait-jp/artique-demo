@@ -1,71 +1,79 @@
 {
- "version": "2026-11-04",
- "note_en": "Provisional values set by the planning side for this demo. Every item is an assumption to be confirmed; nothing here is a commercial commitment.",
- "note_ja": "デモのために計画側が仮置きした値。すべて確認待ちの仮定であり、商業上の約束ではない。",
+ "version": "2026-11-05",
+ "note_en": "Provisional values set by the planning side, updated after the founders' meeting of 4 November 2026. Each item is marked decided, provisional or open; nothing here is a commercial commitment.",
+ "note_ja": "計画側が仮置きし、2026年11月4日の打ち合わせを受けて更新した値。各項目に「決定」「仮置き」「要確認」の印を付けている。商業上の約束ではない。",
  "items": [
   {
    "id": "A1",
    "group": "business",
    "label_en": "Operating entity",
    "label_ja": "運営法人",
-   "value_en": "A French company (SAS) based in Paris; engineering and site operations may be run from Japan under contract.",
-   "value_ja": "パリに本社を置くフランス法人（SAS）。技術・サイト運営は日本から業務委託で行う想定。"
+   "value_en": "A separate French company (SAS) in Paris created for ARTIQUE, not housed in an existing third party's company. Engineering and site operations are run from Japan under contract. Incorporation cost is being checked.",
+   "value_ja": "ARTIQUE 専用にパリでフランス法人（SAS）を新設する。既存の第三者の会社には置かない。技術・サイト運営は日本から業務委託。設立費用は調査中。",
+   "status": "decided"
   },
   {
    "id": "A2",
    "group": "business",
    "label_en": "Legal model of the auctions",
    "label_ja": "オークションの法的形態",
-   "value_en": "The demo is built as an electronic auction brokerage (courtage aux enchères par voie électronique): ARTIQUE connects sellers and bidders and never takes title. Under French commercial law (art. L321-3) this status requires that ARTIQUE neither declares a lot sold to the highest bidder nor intervenes in describing the objects, which conflicts with specialist cataloguing. The options are: descriptions published in the seller's name with ARTIQUE only proposing wording; a partnership with a declared auction house (OVV) that conducts the sales; or ARTIQUE's own OVV registration with a qualified auctioneer. To be decided with a French lawyer.",
-   "value_ja": "デモは「電子的な競り仲介（courtage aux enchères par voie électronique）」として作成。ARTIQUE は売主と入札者を仲介し、所有権は持たない。仏商法 L321-3 ではこの形態は「最高額入札者への落札宣言をしない」「物品の記述に介入しない」ことが条件で、専門家によるカタログ記述と衝突する。選択肢は、記述を出品者名義で公開し ARTIQUE は案を出すだけ／宣言制のオークション会社（OVV）と提携してその会社が落札を行う／自前で OVV 登録し有資格の競売人を置く、の3つ。仏弁護士と決める。"
+   "value_en": "Electronic auction brokerage (courtage aux enchères par voie électronique), option A: listing texts are written and published by the seller, under the seller's responsibility. ARTIQUE offers a drafting assistant and a vocabulary guide but does not author or certify descriptions; its review is limited to admissibility (prohibited items, completeness, obvious fraud). The sale is concluded automatically between the seller and the highest bidder at the fixed closing time, under the terms of use, and the nature of the service is stated on every page. A partnership with a declared auction house (OVV) remains a later option. To be validated by a French lawyer.",
+   "value_ja": "電子的な競り仲介（courtage aux enchères par voie électronique）の案 A。出品文は出品者が自ら書いて自らの責任で公開する。ARTIQUE は下書き支援と用語ガイドを提供するが、記述の作成や保証はしない。審査は受理可否（禁止品、記載の不足、明らかな不正）に限る。売買は規約に基づき、固定の終了時刻に出品者と最高額入札者の間で自動的に成立し、サービスの性質を全ページに明記する。宣言制のオークション会社（OVV）との提携は後の選択肢。仏弁護士の確認が必要。",
+   "status": "assumed"
   },
   {
    "id": "A3",
    "group": "business",
    "label_en": "Brand and domain",
    "label_ja": "ブランド名とドメイン",
-   "value_en": "Brand: ARTIQUE (trademark search not yet done). Production domain candidate: artique.art; .fr only once the French entity exists. Demo lives on GitHub Pages.",
-   "value_ja": "ブランドは ARTIQUE（商標調査は未実施）。本番ドメイン候補は artique.art。.fr はフランス法人設立後。デモは GitHub Pages 上。"
+   "value_en": "Brand ARTIQUE kept for now. Trademark (INPI / EUIPO) and domains (.com, .fr, .art) to be checked before incorporation; the name changes if it is taken.",
+   "value_ja": "ブランドは当面 ARTIQUE。商標（INPI／EUIPO）とドメイン（.com、.fr、.art）を法人設立前に確認し、取られていれば改名する。",
+   "status": "open"
   },
   {
    "id": "A4",
    "group": "business",
    "label_en": "Market, languages, currency, time zone",
    "label_ja": "市場・言語・通貨・時刻",
-   "value_en": "France first, shipping EU-wide and to Japan. Languages FR / EN / JA. Prices in EUR only. All closing times in Europe/Paris time, shown in the visitor's local time as well.",
-   "value_ja": "フランスを主市場とし、EU 全域と日本へ配送。言語は FR / EN / JA。価格は EUR のみ。終了時刻は Europe/Paris 基準で、閲覧者の現地時刻も併記。"
+   "value_en": "France first, with shipping inside the EU only at launch (no UK, no Japan), so no customs. The interface is in FR / EN / JA; listing content is shown in the language the seller wrote it in and is not translated by ARTIQUE (visitors may use their browser's translation). Prices in EUR only. Closing times in Europe/Paris time, shown with the visitor's local time.",
+   "value_ja": "フランスを主市場とし、立ち上げ時の配送は EU 内のみ（英国・日本なし）なので関税は生じない。画面は FR / EN / JA、出品内容は出品者が書いた言語のまま表示し ARTIQUE は翻訳しない（閲覧者はブラウザ翻訳を使える）。価格は EUR のみ。終了時刻は Europe/Paris 基準で現地時刻も併記。",
+   "status": "decided"
   },
   {
    "id": "A5",
    "group": "business",
    "label_en": "Who can sell",
    "label_ja": "出品者の種別",
-   "value_en": "Both private individuals and professional dealers. Professional sellers are marked 'Pro' on the lot page because EU consumer rules differ.",
-   "value_ja": "個人と業者の両方。EU の消費者ルールが異なるため、業者出品はロットに「Pro」表示。"
+   "value_en": "Launch with private sellers only, so the EU 14-day withdrawal right for consumers buying from professionals does not arise at launch. Professional dealers and partner galleries come in a later phase. Whether the founders' own listings would count as professional is a question for the lawyer.",
+   "value_ja": "立ち上げ時は個人出品のみ。業者から消費者への販売に付く EU の14日間撤回権が当初は生じない。業者や提携ギャラリーは後の段階。創業者自身の出品が業者扱いになるかは弁護士に確認。",
+   "status": "decided"
   },
   {
    "id": "A6",
    "group": "business",
    "label_en": "Categories and first sales",
    "label_ja": "カテゴリと最初のセール",
-   "value_en": "Five categories from the concept deck. Demo sales: Japanese Art (Edo to Meiji), Asian Art, Early Photography of Japan, Design & Objects. Contemporary is shown as 'consignments open' only.",
-   "value_ja": "構想資料の5カテゴリ。デモのセールは「日本美術：江戸から明治」「アジア美術」「日本の初期写真」「デザインと工芸品」。現代美術は「出品受付中」のみ表示。"
+   "value_en": "Launch with photography: prints and limited editions that can be reprinted or replaced if lost or damaged, sourced first from photographers the founder knows. A partnership with a print service (one-time print links) is under study. Digital works and experiences or online courses are later options. Japanese art, Asian art and design & objects are shown in the demo as later phases.",
+   "value_ja": "写真から始める。紛失・破損しても再プリントや代替ができるプリントや限定エディションを、まず創業者の知る写真家から集める。印刷サービスとの提携（1回限りの印刷リンク）を検討中。デジタル作品や体験・オンライン講座は後の選択肢。日本美術・アジア美術・デザインと工芸品はデモでは「次の段階」として表示。",
+   "status": "decided"
   },
   {
    "id": "A7",
    "group": "business",
    "label_en": "Cataloguing standard",
    "label_ja": "カタログ記述の基準",
-   "value_en": "Attribution wording follows the French Décret Marcus vocabulary (attribué à, école de, signé, d'après...). The AI drafts, a specialist signs off. Every lot carries a condition report and a provenance line. If the brokerage model is kept, the final text is published under the seller's responsibility.",
-   "value_ja": "帰属の表現は仏「マルキュス政令」の語彙（attribué à, école de, signé, d'après など）に従う。AI が下書きし専門家が承認。全ロットに状態報告と来歴を付ける。仲介型を採る場合、最終的な記述は出品者の責任で公開する。"
+   "value_en": "Attribution wording follows the French Décret Marcus vocabulary; the listing form warns when a term with legal meaning (signé, attribué à, école de, d'après...) is used. Descriptions are the seller's statements under the seller's responsibility. Certificates and earlier auction records are uploaded as provenance. No 'AI authentication'.",
+   "value_ja": "帰属の表現は仏「マルキュス政令」の語彙に従い、法的な意味を持つ語（signé、attribué à、école de、d'après など）を使うと出品フォームが注意を出す。記述は出品者の責任による出品者の申告。証明書や過去のオークション記録は来歴として添付する。「AI 鑑定」は行わない。",
+   "status": "decided"
   },
   {
    "id": "A8",
    "group": "business",
    "label_en": "Guarantee and disputes",
    "label_ja": "保証と紛争",
-   "value_en": "'As described' guarantee: a buyer may report a material discrepancy within 30 days of delivery and receive a full refund; ARTIQUE mediates.",
-   "value_ja": "「記述どおり」保証。到着後30日以内に重大な相違を申告すれば全額返金。ARTIQUE が仲介する。"
+   "value_en": "'As described' guarantee: a buyer may report a material discrepancy within 30 days of delivery for a full refund; ARTIQUE mediates. This is ARTIQUE's own policy, not a legal requirement, and may be aligned to 14 days.",
+   "value_ja": "「記述どおり」保証。到着後30日以内に重大な相違を申告すれば全額返金、ARTIQUE が仲介。これは法定ではなく自社の方針で、14日に揃える案もある。",
+   "status": "assumed"
   },
   {
    "id": "A9",
@@ -73,31 +81,44 @@
    "label_en": "Prohibited and regulated objects",
    "label_ja": "出品禁止・規制対象",
    "value_en": "No ivory, tortoiseshell, coral or other CITES materials for now (EU ivory rules); no sword blades (fittings such as tsuba are fine); no objects designated as cultural property in Japan or France; no firearms. Netsuke in ivory are excluded even when antique.",
-   "value_ja": "象牙・鼈甲・珊瑚など CITES 対象素材は当面不可（EU の象牙規制）。刀身は不可（鍔など刀装具は可）。日仏の指定文化財は不可。銃器は不可。象牙製の根付は古いものでも対象外。"
+   "value_ja": "象牙・鼈甲・珊瑚など CITES 対象素材は当面不可（EU の象牙規制）。刀身は不可（鍔など刀装具は可）。日仏の指定文化財は不可。銃器は不可。象牙製の根付は古いものでも対象外。",
+   "status": "assumed"
+  },
+  {
+   "id": "A10",
+   "group": "business",
+   "label_en": "Who reviews listings",
+   "label_ja": "出品の審査者",
+   "value_en": "At launch the founder reviews listings for admissibility; outside specialists are added later.",
+   "value_ja": "立ち上げ時は創業者が受理可否を審査し、外部の専門家は後から加える。",
+   "status": "decided"
   },
   {
    "id": "B1",
    "group": "auction",
    "label_en": "Sale format",
    "label_ja": "セール形式",
-   "value_en": "Timed online sales (no live stream), themed, 10-day bidding window.",
-   "value_ja": "タイムド・オンライン（ライブ配信なし）、テーマ別、入札期間10日。"
+   "value_en": "Timed online sales only (no live stream), themed, 10-day bidding window.",
+   "value_ja": "タイムド・オンラインのみ（ライブ配信なし）、テーマ別、入札期間10日。",
+   "status": "decided"
   },
   {
    "id": "B2",
    "group": "auction",
    "label_en": "Closing and anti-sniping",
    "label_ja": "終了方式と延長",
-   "value_en": "Lots close one by one, 60 seconds apart. A bid placed in the last 2 minutes extends that lot by 2 minutes, without limit.",
-   "value_ja": "ロットは60秒間隔で順次終了。終了2分前以降の入札でそのロットを2分延長（回数制限なし）。"
+   "value_en": "Fixed closing time with no extension (no anti-sniping rule), chosen for simplicity; lots still close one by one, 60 seconds apart. May be revisited after the first sales.",
+   "value_ja": "固定の終了時刻で延長なし（駆け込み入札の延長ルールは採らない）。分かりやすさを優先。ロットは引き続き60秒間隔で順次終了。最初のセールの後に見直し可。",
+   "status": "decided"
   },
   {
    "id": "B3",
    "group": "auction",
    "label_en": "Estimates, starting price, reserve",
    "label_ja": "見積・開始価格・リザーブ",
-   "value_en": "Minimum low estimate €300. Starting price = 60% of the low estimate, rounded down to the increment. Reserve is optional, hidden, never above the low estimate; the page shows 'reserve met / not met'.",
-   "value_ja": "低見積の下限は€300。開始価格は低見積の60%を入札単位で切り下げ。リザーブは任意・非公開・低見積以下で、ページには「リザーブ到達／未到達」のみ表示。"
+   "value_en": "The seller sets the starting price and may set a hidden reserve and an optional buy-now price; a bid at the buy-now price closes the lot immediately. Estimates are optional. ARTIQUE sets no minimum.",
+   "value_ja": "開始価格は出品者が決める。非公開のリザーブと、任意の即決価格も設定できる。即決価格での入札はその場でロットを終了する。見積は任意。ARTIQUE は下限を設けない。",
+   "status": "decided"
   },
   {
    "id": "B4",
@@ -105,7 +126,8 @@
    "label_en": "Bid increments",
    "label_ja": "入札単位",
    "value_en": "< €100: €5 · €100–299: €10 · €300–499: €20 · €500–999: €50 · €1,000–2,999: €100 · €3,000–4,999: €200 · €5,000–9,999: €500 · €10,000–19,999: €1,000 · ≥ €20,000: €2,000",
-   "value_ja": "€100未満: €5 ／ €100–299: €10 ／ €300–499: €20 ／ €500–999: €50 ／ €1,000–2,999: €100 ／ €3,000–4,999: €200 ／ €5,000–9,999: €500 ／ €10,000–19,999: €1,000 ／ €20,000以上: €2,000"
+   "value_ja": "€100未満: €5 ／ €100–299: €10 ／ €300–499: €20 ／ €500–999: €50 ／ €1,000–2,999: €100 ／ €3,000–4,999: €200 ／ €5,000–9,999: €500 ／ €10,000–19,999: €1,000 ／ €20,000以上: €2,000",
+   "status": "assumed"
   },
   {
    "id": "B5",
@@ -113,87 +135,107 @@
    "label_en": "Maximum (proxy) bids",
    "label_ja": "上限額（自動）入札",
    "value_en": "Available. The system bids on the bidder's behalf up to the maximum, one increment above the competing bid.",
-   "value_ja": "あり。上限額まで、競合入札の1単位上を自動で入札する。"
+   "value_ja": "あり。上限額まで、競合入札の1単位上を自動で入札する。",
+   "status": "assumed"
   },
   {
    "id": "B6",
    "group": "auction",
    "label_en": "Bid retraction",
    "label_ja": "入札の取消",
-   "value_en": "Not allowed. Obvious typing errors can be voided by support up to 1 hour before the lot closes.",
-   "value_ja": "原則不可。明らかな誤入力は終了1時間前までサポートが無効化できる。"
+   "value_en": "Not allowed. A buyer who retracts or does not pay receives a penalty; repeated cases lose the account, as on Mercari or eBay.",
+   "value_ja": "原則不可。取消や未払いにはペナルティ、繰り返せばアカウント停止（メルカリや eBay と同様）。",
+   "status": "decided"
   },
   {
    "id": "B7",
    "group": "auction",
    "label_en": "Fees",
    "label_ja": "手数料",
-   "value_en": "Buyer's premium 15% of the hammer price excl. VAT (18% incl. 20% VAT). Seller's commission 12% excl. VAT. No listing fee; no fee on unsold lots.",
-   "value_ja": "買主手数料は落札価格の15%（税抜。20%VAT込みで18%）。売主手数料は12%（税抜）。出品料なし。不落札の手数料なし。"
+   "value_en": "Buyer's premium provisionally 25% of the hammer price excl. VAT (30% incl. 20% VAT), in line with the French market (Drouot houses about 25% excl. VAT; Christie's and Sotheby's about 28% on the first band). Seller's commission 12% excl. VAT. No listing fee; no fee on unsold lots. Final rates to be set with the launch budget.",
+   "value_ja": "買主手数料は仮に落札価格の25%（税抜。20%VAT込みで30%）。フランス市場の水準（ドルオー系は約25%税抜、クリスティーズ・サザビーズは最初の価格帯で約28%）に合わせた。売主手数料は12%（税抜）。出品料なし、不落札の手数料なし。最終的な料率は立ち上げ予算と合わせて決める。",
+   "status": "assumed"
   },
   {
    "id": "B8",
    "group": "auction",
    "label_en": "Payment deadline and methods",
    "label_ja": "支払期限と方法",
-   "value_en": "Payment within 3 days of the lot closing. Card (Visa, Mastercard, Amex, Apple Pay / Google Pay) and SEPA bank transfer; transfer recommended above €5,000.",
-   "value_ja": "終了後3日以内に支払い。カード（Visa・Mastercard・Amex・Apple Pay／Google Pay）と SEPA 振込。€5,000 超は振込を推奨。"
+   "value_en": "Payment within 3 days of the lot closing, by card or PayPal through the payment provider's hosted page. No bank transfer: too error-prone to administer.",
+   "value_ja": "終了後3日以内に、決済事業者のページでカードまたは PayPal で支払う。銀行振込は管理の手間と誤りが多いので採らない。",
+   "status": "decided"
   },
   {
    "id": "B9",
    "group": "auction",
    "label_en": "Seller payout",
    "label_ja": "出品者への支払",
-   "value_en": "14 days after the buyer confirms delivery, or 21 days after shipment if no confirmation.",
-   "value_ja": "買主の受領確認から14日後。確認がなければ発送から21日後。"
+   "value_en": "Sellers are paid only after the buyer confirms receipt, never on shipment alone. Confirmations received by the end of a month are paid together on the 15th of the following month. A deemed-receipt rule (tracked delivery plus no complaint within 14 days) is still needed because the payment provider requires payout within 90 days; to be confirmed.",
+   "value_ja": "出品者への支払は買主の受領確認後のみで、発送だけでは支払わない。月末までに受領確認があった分を翌月15日にまとめて送金する。決済事業者は90日以内の送金を求めるため、「追跡で配達済み＋14日間異議なし」を受領とみなす規定が別途必要。要確認。",
+   "status": "decided"
   },
   {
    "id": "B10",
    "group": "auction",
    "label_en": "Shipping",
    "label_ja": "配送",
-   "value_en": "The seller ships within 5 business days, tracked and insured. The buyer pays shipping; an estimate (France / EU / World) is shown on each lot. Pickup in Paris if the seller agrees. Lots above €3,000 use a fine-art shipper.",
-   "value_ja": "出品者が5営業日以内に追跡・保険付きで発送。送料は買主負担で、ロットごとに目安（フランス／EU／その他）を表示。出品者が認めればパリで引き取り可。€3,000 超は美術品輸送業者を使う。"
+   "value_en": "At launch only photography ships, by tracked post or courier, packed by the seller. The shipping cost is set by the seller per lot and included in the buyer's total. Hand-over in person is allowed when both sides agree.",
+   "value_ja": "立ち上げ時に発送するのは写真のみで、出品者が梱包し追跡付き郵便か宅配便で送る。送料は出品者がロットごとに設定し、買主の合計額に含める。双方が合意すれば対面での受け渡しも可。",
+   "status": "decided"
   },
   {
    "id": "B11",
    "group": "auction",
    "label_en": "Right of withdrawal and returns",
    "label_ja": "撤回権と返品",
-   "value_en": "14-day right of withdrawal for consumers buying from a professional seller (EU rule). No withdrawal right on lots from private sellers; only the 'as described' guarantee applies. Stated on every lot page.",
-   "value_ja": "業者出品を消費者が落札した場合は14日間の撤回権（EU 規則）。個人出品には撤回権なしで「記述どおり」保証のみ。全ロットページに明記。"
+   "value_en": "EU law: a consumer buying from a professional seller has a 14-day right of withdrawal; private-seller lots carry only the 'as described' guarantee. Stated on every lot page. (At launch there are no professional sellers, see A5.)",
+   "value_ja": "EU 法どおり、業者出品を消費者が落札した場合は14日間の撤回権、個人出品は「記述どおり」保証のみ。全ロットページに明記。（立ち上げ時は業者出品なし、A5 参照。）",
+   "status": "decided"
   },
   {
    "id": "B12",
    "group": "auction",
    "label_en": "Bidder registration and identity checks",
    "label_ja": "入札者登録と本人確認",
-   "value_en": "Email, phone and a card on file before the first bid. Identity verification when a bid or the cumulative purchases reach €10,000 (anti-money-laundering threshold for the art market).",
-   "value_ja": "初回入札前にメール・電話・カード登録。入札額または累計購入額が€10,000に達したら本人確認（美術品市場のマネロン対策の閾値）。"
+   "value_en": "Per-lot maximum of €9,999 for bids and buy-now prices, so that the €10,000 anti-money-laundering threshold for the art market is never reached and identity verification is not required at launch. Email, phone and a card on file before the first bid. Linked purchases by one buyer are monitored.",
+   "value_ja": "入札と即決価格は1ロット €9,999 を上限とし、美術品市場のマネロン対策の閾値 €10,000 に届かないようにする。これにより立ち上げ時の本人確認は不要。初回入札前にメール・電話・カード登録。同一買主の関連取引は監視する。",
+   "status": "decided"
+  },
+  {
+   "id": "B13",
+   "group": "auction",
+   "label_en": "Export and import paperwork",
+   "label_ja": "輸出入の手続き",
+   "value_en": "Not applicable at launch because shipping stays inside the EU; to be revisited before shipping outside the EU.",
+   "value_ja": "立ち上げ時は EU 内配送のみなので対象外。EU 外に送る前に見直す。",
+   "status": "decided"
   },
   {
    "id": "C1",
    "group": "payment",
    "label_en": "Payment provider",
    "label_ja": "決済事業者",
-   "value_en": "Stripe Connect: sellers onboard as Express accounts, the platform collects from the buyer and transfers the net amount to the seller. The demo is NOT connected to Stripe; the checkout screen is a mock.",
-   "value_ja": "Stripe Connect。出品者は Express アカウントで登録し、プラットフォームが買主から受け取り、差引後に出品者へ送金。デモは Stripe に接続しておらず、決済画面はモック。"
+   "value_en": "Stripe (Connect) is confirmed usable for a French company; PayPal is an alternative or additional buyer method. The demo is not connected; the checkout is a mock.",
+   "value_ja": "Stripe（Connect）はフランス法人で利用可能と確認。PayPal は代替または追加の支払手段。デモは未接続で決済画面はモック。",
+   "status": "decided"
   },
   {
    "id": "C2",
    "group": "payment",
    "label_en": "Flow of funds",
    "label_ja": "資金の流れ",
-   "value_en": "Buyer pays hammer price + premium + shipping to the platform. The platform keeps both commissions and releases the seller's share per B9.",
-   "value_ja": "買主は落札価格＋手数料＋送料をプラットフォームへ支払う。プラットフォームは両手数料を留保し、B9 の時期に出品者分を送金。"
+   "value_en": "Buyers pay through the provider's hosted checkout. Funds stay with the licensed provider (Stripe) until payout; ARTIQUE never holds client money in its own bank account. Monthly transfers to sellers go through the provider, and ARTIQUE's account receives only its commissions. This is the structure Catawiki uses with Stripe.",
+   "value_ja": "買主は決済事業者のページで支払う。資金は送金まで免許を持つ事業者（Stripe）に留まり、ARTIQUE は自社口座で顧客の資金を預からない。出品者への月次送金も事業者経由で行い、ARTIQUE の口座には手数料だけが入る。Catawiki が Stripe で採っている形。",
+   "status": "assumed"
   },
   {
    "id": "C3",
    "group": "payment",
    "label_en": "Artist's resale right (droit de suite)",
    "label_ja": "追及権（droit de suite）",
-   "value_en": "Borne by the seller, as French law provides by default. Applies to eligible works from €750 (4% on the first €50,000, decreasing above). Shown on the lot page when applicable.",
-   "value_ja": "仏法の原則どおり売主負担。対象作品は€750以上から（最初の€50,000までは4%、以降逓減）。該当ロットのページに表示。"
+   "value_en": "Artist's resale right is borne by the seller, as French law provides by default. It applies to original works and limited editions by living artists or artists dead less than 70 years, from €750 (4% in the first band). Shown on the lot page when applicable.",
+   "value_ja": "追及権は仏法の原則どおり売主負担。存命または没後70年未満の作家の原作品と限定エディションに、€750 以上から適用（最初の価格帯は4%）。該当ロットのページに表示。",
+   "status": "assumed"
   },
   {
    "id": "C4",
@@ -201,47 +243,53 @@
    "label_en": "VAT display",
    "label_ja": "VAT の表示",
    "value_en": "20% VAT on ARTIQUE's fees, always shown incl. VAT. VAT on the object itself depends on the seller (none for private sellers; margin scheme or 5.5% for professionals) and is flagged per lot.",
-   "value_ja": "ARTIQUE の手数料には20%VAT、常に税込表示。作品自体の VAT は出品者による（個人は非課税、業者はマージン課税または5.5%）ため、ロットごとに表示。"
+   "value_ja": "ARTIQUE の手数料には20%VAT、常に税込表示。作品自体の VAT は出品者による（個人は非課税、業者はマージン課税または5.5%）ため、ロットごとに表示。",
+   "status": "assumed"
   },
   {
    "id": "C5",
    "group": "payment",
    "label_en": "Currency",
    "label_ja": "通貨",
-   "value_en": "EUR only for bidding and settlement. Indicative JPY and USD conversions on the lot page (ECB reference rate, updated daily in production; fixed in the demo).",
-   "value_ja": "入札と決済は EUR のみ。ロットページに参考として JPY と USD を併記（本番は ECB 参照レートを日次更新、デモは固定値）。"
+   "value_en": "EUR only, for bidding, display and settlement. No JPY or USD conversions.",
+   "value_ja": "入札・表示・決済とも EUR のみ。円やドルの換算表示はしない。",
+   "status": "decided"
   },
   {
    "id": "D1",
    "group": "tech",
    "label_en": "Hosting",
    "label_ja": "ホスティング",
-   "value_en": "Production: web app on a global edge host with the database in an EU region (Paris or Frankfurt). Demo: static site on GitHub Pages, public URL.",
-   "value_ja": "本番はエッジ配信のホスティング＋EU リージョン（パリまたはフランクフルト）のデータベース。デモは GitHub Pages の静的サイト（公開 URL）。"
+   "value_en": "Production hosting in the EU: web app on an edge host with the database in an EU region (Paris or Frankfurt), even though the EU adequacy decision for Japan would allow access from Japan. Demo: static site on GitHub Pages.",
+   "value_ja": "本番は EU 内でホスティング。エッジ配信＋EU リージョン（パリまたはフランクフルト）のデータベース。日本への十分性認定で日本からのアクセス自体は可能だが、サーバーは EU に置く。デモは GitHub Pages の静的サイト。",
+   "status": "decided"
   },
   {
    "id": "D2",
    "group": "tech",
    "label_en": "Personal data",
    "label_ja": "個人データ",
-   "value_en": "Stored in the EU. Access from Japan relies on the EU adequacy decision for Japan. Privacy policy and cookie consent follow CNIL guidance.",
-   "value_ja": "EU 内に保管。日本からのアクセスは日本への十分性認定に基づく。プライバシーポリシーと Cookie 同意は CNIL の指針に従う。"
+   "value_en": "Collect and keep as little personal data as possible: no card data (hosted payment pages), no identity documents at launch (see B12), a minimal profile, data stored in the EU, and a CNIL-compliant consent panel.",
+   "value_ja": "個人データは極力集めず、保持しない。カード情報は保持しない（決済事業者のページ）、立ち上げ時は本人確認書類も集めない（B12）、プロフィールは最小限、保管は EU 内、CNIL 準拠の同意パネル。",
+   "status": "decided"
   },
   {
    "id": "D3",
    "group": "tech",
    "label_en": "Role of the AI (Claude)",
    "label_ja": "AI（Claude）の役割",
-   "value_en": "Drafts lot descriptions and condition reports, translates FR / EN / JA, answers first-line support (clearly labelled as AI), screens suspicious listings, drafts editorial content. A human specialist approves everything published and decides every authenticity or dispute question.",
-   "value_ja": "ロット説明と状態報告の下書き、FR / EN / JA 翻訳、問い合わせの一次対応（AI であることを明示）、不審な出品の一次スクリーニング、編集コンテンツの下書き。公開物の承認と真贋・紛争の判断はすべて人間の専門家。"
+   "value_en": "The AI drafts listing text for sellers (the seller edits and publishes), screens suspicious listings and bids (money-laundering patterns, prohibited items), and answers first-line support in a chat clearly labelled as AI (EU AI Act, art. 50). It does not translate listings and does not authenticate works. Humans decide every dispute.",
+   "value_ja": "AI は出品者向けに出品文の下書きを作り（出品者が編集して公開）、不審な出品や入札（マネロンの型、禁止品）を一次スクリーニングし、AI と明示したチャットで問い合わせの一次対応をする（EU AI 法50条）。出品内容の翻訳と真贋判定はしない。紛争の判断はすべて人間。",
+   "status": "decided"
   },
   {
    "id": "D4",
    "group": "tech",
    "label_en": "Images",
    "label_ja": "画像",
-   "value_en": "Production: ARTIQUE photography or seller photos meeting a minimum spec (2,000 px long edge, neutral background, 6 views). Demo: public-domain images from The Metropolitan Museum of Art (CC0), credited on every lot.",
-   "value_ja": "本番は ARTIQUE 撮影または最低仕様（長辺2,000px、無地背景、6方向）を満たす出品者写真。デモはメトロポリタン美術館のパブリックドメイン画像（CC0）で、全ロットに出典を表示。"
+   "value_en": "Sellers photograph their own items to a published minimum spec; ARTIQUE does not photograph or receive items. Demo images are public-domain works from The Metropolitan Museum of Art (CC0).",
+   "value_ja": "出品者が公開仕様に沿って自分で撮影する。ARTIQUE は撮影も現物の受け取りもしない。デモの画像はメトロポリタン美術館のパブリックドメイン作品（CC0）。",
+   "status": "decided"
   },
   {
    "id": "D5",
@@ -249,7 +297,8 @@
    "label_en": "Support hours",
    "label_ja": "サポート時間",
    "value_en": "Email and in-app messages in FR / EN / JA, answered within one business day Paris time. Covered from Japan (JST is 7–8 hours ahead of Paris).",
-   "value_ja": "メールとアプリ内メッセージ、FR / EN / JA、パリ時間で1営業日以内に返信。日本から対応（JST はパリより7〜8時間先行）。"
+   "value_ja": "メールとアプリ内メッセージ、FR / EN / JA、パリ時間で1営業日以内に返信。日本から対応（JST はパリより7〜8時間先行）。",
+   "status": "assumed"
   },
   {
    "id": "D6",
@@ -257,23 +306,26 @@
    "label_en": "Notifications and analytics",
    "label_ja": "通知と解析",
    "value_en": "Email for outbid, won, payment and shipping events. Privacy-friendly analytics without cross-site tracking; a cookie banner only for non-essential cookies.",
-   "value_ja": "高値更新・落札・支払・発送のメール通知。クロスサイト追跡なしのプライバシー配慮型解析。Cookie バナーは非必須 Cookie のみ対象。"
+   "value_ja": "高値更新・落札・支払・発送のメール通知。クロスサイト追跡なしのプライバシー配慮型解析。Cookie バナーは非必須 Cookie のみ対象。",
+   "status": "assumed"
   },
   {
    "id": "D7",
    "group": "tech",
    "label_en": "AI contract and budget",
    "label_ja": "AI の契約と予算",
-   "value_en": "Anthropic API on pay-as-you-go, starting budget €200 per month, with a data processing agreement signed before any personal data is sent. Production inference in an EU region where available.",
-   "value_ja": "Anthropic API の従量課金、初期予算は月 €200。個人データを送る前にデータ処理契約（DPA）を締結。可能なら EU リージョンで推論。"
+   "value_en": "Anthropic API on pay-as-you-go with a data processing agreement. The budget depends on expected volumes; a minimum running cost for the site and an AI cost estimate are in the planning document.",
+   "value_ja": "Anthropic API の従量課金、データ処理契約を締結。予算は想定する利用量次第で、サイトの最低限の運営費と AI 費用の試算は計画文書にある。",
+   "status": "open"
   },
   {
    "id": "E1",
    "group": "demo",
    "label_en": "What the demo is",
    "label_ja": "このデモの性質",
-   "value_en": "A static site with no server. Each visitor gets their own simulated auction stored in the browser. Rival bidders are simulated. Nothing is sold, no money moves.",
-   "value_ja": "サーバーのない静的サイト。閲覧者ごとにブラウザ内で模擬オークションが進む。競合入札者はシミュレーション。実際の販売も送金もない。"
+   "value_en": "Public URL on GitHub Pages; no personal data is shown, so public access is acceptable.",
+   "value_ja": "GitHub Pages の公開 URL。個人情報は出していないので公開でよい。",
+   "status": "decided"
   },
   {
    "id": "E2",
@@ -281,7 +333,8 @@
    "label_en": "Demo controls",
    "label_ja": "デモ操作",
    "value_en": "A small panel lets you reset the demo, close a lot immediately to see the end-of-sale and checkout flow, and trigger a rival bid.",
-   "value_ja": "小さなパネルで、デモのリセット、ロットの即時終了（終了後と決済の流れを見るため）、競合入札の発生ができる。"
+   "value_ja": "小さなパネルで、デモのリセット、ロットの即時終了（終了後と決済の流れを見るため）、競合入札の発生ができる。",
+   "status": "assumed"
   },
   {
    "id": "E3",
@@ -289,7 +342,25 @@
    "label_en": "Lot data",
    "label_ja": "ロットのデータ",
    "value_en": "Object images and basic cataloguing come from The Met's open-access records. Estimates, provenance lines, condition reports and bidders are illustrative, written for the demo.",
-   "value_ja": "画像と基本的なカタログ情報はメトロポリタン美術館のオープンアクセス記録から。見積・来歴・状態報告・入札者はデモ用の例示。"
+   "value_ja": "画像と基本的なカタログ情報はメトロポリタン美術館のオープンアクセス記録から。見積・来歴・状態報告・入札者はデモ用の例示。",
+   "status": "assumed"
   }
- ]
+ ],
+ "statuses": {
+  "decided": {
+   "en": "Decided 4 Nov 2026",
+   "fr": "Décidé le 4 nov. 2026",
+   "ja": "2026-11-04 決定"
+  },
+  "assumed": {
+   "en": "Provisional",
+   "fr": "Provisoire",
+   "ja": "仮置き"
+  },
+  "open": {
+   "en": "Open",
+   "fr": "À confirmer",
+   "ja": "要確認"
+  }
+ }
 }

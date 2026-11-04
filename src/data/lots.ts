@@ -7,12 +7,27 @@ export interface Lot {
   id: string; saleId: SaleId; index: number; metId: number; image: string;
   title: Localized; attribution: Localized; description: Localized; condition: Localized;
   provenance: Localized; medium: Localized; date: Localized; dimensions: string;
-  artistDeathYear: number | null; estimateLow: number; estimateHigh: number;
-  sellerType: 'private' | 'pro'; shipping: { france: number; eu: number; world: number };
+  artistDeathYear: number | null; sourceLang: Lang; startingPrice: number; buyNowPrice?: number;
+  estimateLow?: number; estimateHigh?: number;
+  sellerType: 'private' | 'pro'; shipping: { france: number; eu: number };
   objectURL: string; creditLine: string;
 }
 
 export const sales: Sale[] = [
+  {
+    "id": "C",
+    "title": {
+      "fr": "Les débuts de la photographie au Japon",
+      "en": "Early Photography of Japan",
+      "ja": "日本の初期写真"
+    },
+    "intro": {
+      "fr": "ARTIQUE commence par la photographie : des tirages et des éditions limitées, faciles à expédier. Lorsqu’une édition le permet, un tirage perdu ou endommagé peut être réimprimé ou remplacé avec l’accord de son auteur. Les premières sélections seront réunies auprès de photographes connus du fondateur. Ces vues anciennes du Japon illustrent ici le langage du catalogue ; les objets de musée ne sont pas à vendre.",
+      "en": "ARTIQUE launches with photography: prints and limited editions that are straightforward to ship. Where the edition permits, a lost or damaged print can be reprinted or replaced with the artist’s agreement. The first selections will come from photographers known to the founder. These early views of Japan illustrate the catalogue’s approach; the museum objects are not for sale.",
+      "ja": "ARTIQUEは、配送しやすい写真のプリントと限定エディションから始めます。エディションの条件と作家の同意に応じて、紛失・破損時に再プリントや代替ができる作品を扱います。まず創業者の知る写真家から作品を集めます。ここに掲載する日本の初期写真はカタログの見本であり、美術館の所蔵品は販売されません。"
+    },
+    "offsetDays": 7
+  },
   {
     "id": "A",
     "title": {
@@ -40,20 +55,6 @@ export const sales: Sale[] = [
       "ja": "造形と技法の交流を軸に、アジアの作品を選びました。高麗青磁、中国磁器、玉器、書の文化を紹介します。イズニクや東南アジアの作品が視野を広げます。帰属を慎重に示し、明瞭な記述を心がけたカタログです。"
     },
     "offsetDays": 5
-  },
-  {
-    "id": "C",
-    "title": {
-      "fr": "Les débuts de la photographie au Japon",
-      "en": "Early Photography of Japan",
-      "ja": "日本の初期写真"
-    },
-    "intro": {
-      "fr": "Portraits et vues de lieux composent un regard sur le Japon de la seconde moitié du XIXe siècle. Les tirages à l’albumine témoignent de la diffusion rapide d’un nouveau médium. Un ambrotype rappelle la dimension intime du portrait photographique. Toutes les images retenues représentent le Japon ou ses habitants.",
-      "en": "Portraits and views form a picture of Japan in the second half of the 19th century. Albumen prints trace the rapid spread of a new medium. An ambrotype recalls the intimate scale of the photographic portrait. All selected images depict Japan or its people.",
-      "ja": "19世紀後半の日本を、肖像と風景写真からたどります。鶏卵紙の作品は、新しい表現媒体の急速な広がりを伝えます。アンブロタイプからは写真肖像の親密な性格がうかがえます。日本または日本の人々を写した作品を選んでいます。"
-    },
-    "offsetDays": 7
   },
   {
     "id": "D",
@@ -117,14 +118,15 @@ export const lots: Lot[] = [
     "artistDeathYear": 1858,
     "estimateLow": 2500,
     "estimateHigh": 4000,
-    "sellerType": "pro",
+    "sellerType": "private",
     "shipping": {
       "france": 18,
-      "eu": 35,
-      "world": 65
+      "eu": 35
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/56683",
-    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)",
+    "startingPrice": 1500,
+    "sourceLang": "ja"
   },
   {
     "id": "A-002",
@@ -174,11 +176,13 @@ export const lots: Lot[] = [
     "sellerType": "private",
     "shipping": {
       "france": 18,
-      "eu": 35,
-      "world": 65
+      "eu": 35
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/37193",
-    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)",
+    "startingPrice": 900,
+    "sourceLang": "ja",
+    "buyNowPrice": 3000
   },
   {
     "id": "A-003",
@@ -223,16 +227,15 @@ export const lots: Lot[] = [
     },
     "dimensions": "6 15/16 × 4 5/16 in. (17.7 × 11 cm)",
     "artistDeathYear": 1869,
-    "estimateLow": 1200,
-    "estimateHigh": 1800,
     "sellerType": "private",
     "shipping": {
       "france": 18,
-      "eu": 35,
-      "world": 65
+      "eu": 35
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/78617",
-    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)",
+    "startingPrice": 700,
+    "sourceLang": "ja"
   },
   {
     "id": "A-004",
@@ -279,14 +282,15 @@ export const lots: Lot[] = [
     "artistDeathYear": 1806,
     "estimateLow": 1800,
     "estimateHigh": 2800,
-    "sellerType": "pro",
+    "sellerType": "private",
     "shipping": {
       "france": 18,
-      "eu": 35,
-      "world": 65
+      "eu": 35
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/54864",
-    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)",
+    "startingPrice": 1000,
+    "sourceLang": "en"
   },
   {
     "id": "A-005",
@@ -336,11 +340,13 @@ export const lots: Lot[] = [
     "sellerType": "private",
     "shipping": {
       "france": 35,
-      "eu": 65,
-      "world": 120
+      "eu": 65
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/52251",
-    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)",
+    "startingPrice": 1000,
+    "sourceLang": "ja",
+    "buyNowPrice": 3350
   },
   {
     "id": "A-006",
@@ -385,16 +391,15 @@ export const lots: Lot[] = [
     },
     "dimensions": "H. 6 3/8 in. (16.1 cm); Diam. 3 1/2 in. (8.9 cm); Diam. of rim 2 1/8 in. (5.4 cm); Diam. of foot 1 1/2 in. (3.8 cm)",
     "artistDeathYear": null,
-    "estimateLow": 700,
-    "estimateHigh": 1100,
     "sellerType": "private",
     "shipping": {
       "france": 35,
-      "eu": 65,
-      "world": 120
+      "eu": 65
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/50328",
-    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)",
+    "startingPrice": 420,
+    "sourceLang": "ja"
   },
   {
     "id": "A-007",
@@ -441,14 +446,15 @@ export const lots: Lot[] = [
     "artistDeathYear": null,
     "estimateLow": 600,
     "estimateHigh": 900,
-    "sellerType": "pro",
+    "sellerType": "private",
     "shipping": {
       "france": 35,
-      "eu": 65,
-      "world": 120
+      "eu": 65
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/48822",
-    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)",
+    "startingPrice": 360,
+    "sourceLang": "ja"
   },
   {
     "id": "A-008",
@@ -498,11 +504,13 @@ export const lots: Lot[] = [
     "sellerType": "private",
     "shipping": {
       "france": 18,
-      "eu": 35,
-      "world": 65
+      "eu": 35
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/59356",
-    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)",
+    "startingPrice": 240,
+    "sourceLang": "en",
+    "buyNowPrice": 700
   },
   {
     "id": "A-009",
@@ -547,16 +555,15 @@ export const lots: Lot[] = [
     },
     "dimensions": "H. 1 5/8 in. square (4.1 cm); D. 1/2 in. (1.3 cm)",
     "artistDeathYear": null,
-    "estimateLow": 300,
-    "estimateHigh": 500,
     "sellerType": "private",
     "shipping": {
       "france": 18,
-      "eu": 35,
-      "world": 65
+      "eu": 35
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/59414",
-    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)",
+    "startingPrice": 180,
+    "sourceLang": "ja"
   },
   {
     "id": "A-010",
@@ -603,14 +610,15 @@ export const lots: Lot[] = [
     "artistDeathYear": null,
     "estimateLow": 900,
     "estimateHigh": 1400,
-    "sellerType": "pro",
+    "sellerType": "private",
     "shipping": {
       "france": 35,
-      "eu": 65,
-      "world": 120
+      "eu": 65
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/58507",
-    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)",
+    "startingPrice": 500,
+    "sourceLang": "ja"
   },
   {
     "id": "A-011",
@@ -660,11 +668,13 @@ export const lots: Lot[] = [
     "sellerType": "private",
     "shipping": {
       "france": 35,
-      "eu": 65,
-      "world": 120
+      "eu": 65
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/58510",
-    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)",
+    "startingPrice": 480,
+    "sourceLang": "ja",
+    "buyNowPrice": 1400
   },
   {
     "id": "A-012",
@@ -709,16 +719,15 @@ export const lots: Lot[] = [
     },
     "dimensions": "H. 2 7/8 in. (7.3 cm); W. 2 5/8 in. (6.7 cm); thickness 5/16 in. (0.8 cm); Wt. 5.4 oz. (153.1 g)",
     "artistDeathYear": null,
-    "estimateLow": 1200,
-    "estimateHigh": 1800,
     "sellerType": "private",
     "shipping": {
       "france": 35,
-      "eu": 65,
-      "world": 120
+      "eu": 65
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/24623",
-    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)",
+    "startingPrice": 700,
+    "sourceLang": "en"
   },
   {
     "id": "B-001",
@@ -763,16 +772,17 @@ export const lots: Lot[] = [
     },
     "dimensions": "H. 13 3/16 in. (33.5 cm); W. 7 1/2 in. (19.1 cm)",
     "artistDeathYear": null,
-    "estimateLow": 8000,
-    "estimateHigh": 12000,
-    "sellerType": "pro",
+    "estimateLow": 6000,
+    "estimateHigh": 9000,
+    "sellerType": "private",
     "shipping": {
       "france": 35,
-      "eu": 65,
-      "world": 120
+      "eu": 65
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/42301",
-    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)",
+    "startingPrice": 4800,
+    "sourceLang": "en"
   },
   {
     "id": "B-002",
@@ -818,15 +828,17 @@ export const lots: Lot[] = [
     "dimensions": "H. 15 1/4 in. (38.7 cm); Diam. 13 in. (33 cm); Diam. of rim 5 1/2 in. (14 cm); Diam. of foot 4 7/8 in. (12.4 cm)",
     "artistDeathYear": null,
     "estimateLow": 7000,
-    "estimateHigh": 10000,
+    "estimateHigh": 9500,
     "sellerType": "private",
     "shipping": {
       "france": 35,
-      "eu": 65,
-      "world": 120
+      "eu": 65
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/45432",
-    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)",
+    "startingPrice": 4200,
+    "sourceLang": "fr",
+    "buyNowPrice": 9998
   },
   {
     "id": "B-003",
@@ -871,16 +883,15 @@ export const lots: Lot[] = [
     },
     "dimensions": "H. 14 3/8 in. (36.5 cm); Diam. 5 1/2 in. (14 cm) / Diam. of rim: 5 in. (12.7 cm) / Diam. of base: 4 15/16 in. (12.5 cm)",
     "artistDeathYear": null,
-    "estimateLow": 3000,
-    "estimateHigh": 5000,
     "sellerType": "private",
     "shipping": {
       "france": 35,
-      "eu": 65,
-      "world": 120
+      "eu": 65
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/76452",
-    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)",
+    "startingPrice": 1800,
+    "sourceLang": "en"
   },
   {
     "id": "B-004",
@@ -927,14 +938,15 @@ export const lots: Lot[] = [
     "artistDeathYear": null,
     "estimateLow": 5000,
     "estimateHigh": 8000,
-    "sellerType": "pro",
+    "sellerType": "private",
     "shipping": {
       "france": 35,
-      "eu": 65,
-      "world": 120
+      "eu": 65
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/41925",
-    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)",
+    "startingPrice": 3000,
+    "sourceLang": "fr"
   },
   {
     "id": "B-005",
@@ -984,11 +996,13 @@ export const lots: Lot[] = [
     "sellerType": "private",
     "shipping": {
       "france": 35,
-      "eu": 65,
-      "world": 120
+      "eu": 65
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/42528",
-    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)",
+    "startingPrice": 1500,
+    "sourceLang": "en",
+    "buyNowPrice": 4800
   },
   {
     "id": "B-006",
@@ -1033,16 +1047,15 @@ export const lots: Lot[] = [
     },
     "dimensions": "D. 1 5/8 in. (4.2 cm) / Diam. 10 13/16 in. (27.5 cm)",
     "artistDeathYear": null,
-    "estimateLow": 1800,
-    "estimateHigh": 2800,
     "sellerType": "private",
     "shipping": {
       "france": 35,
-      "eu": 65,
-      "world": 120
+      "eu": 65
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/934485",
-    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)",
+    "startingPrice": 1000,
+    "sourceLang": "fr"
   },
   {
     "id": "B-007",
@@ -1089,14 +1102,15 @@ export const lots: Lot[] = [
     "artistDeathYear": null,
     "estimateLow": 700,
     "estimateHigh": 1100,
-    "sellerType": "pro",
+    "sellerType": "private",
     "shipping": {
       "france": 35,
-      "eu": 65,
-      "world": 120
+      "eu": 65
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/39599",
-    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)",
+    "startingPrice": 420,
+    "sourceLang": "en"
   },
   {
     "id": "B-008",
@@ -1146,11 +1160,13 @@ export const lots: Lot[] = [
     "sellerType": "private",
     "shipping": {
       "france": 18,
-      "eu": 35,
-      "world": 65
+      "eu": 35
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/457783",
-    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)",
+    "startingPrice": 500,
+    "sourceLang": "fr",
+    "buyNowPrice": 1650
   },
   {
     "id": "B-009",
@@ -1195,16 +1211,15 @@ export const lots: Lot[] = [
     },
     "dimensions": "L. 14 3/8 in. (36.5 cm)",
     "artistDeathYear": null,
-    "estimateLow": 3500,
-    "estimateHigh": 5500,
     "sellerType": "private",
     "shipping": {
       "france": 35,
-      "eu": 65,
-      "world": 120
+      "eu": 65
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/74426",
-    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)",
+    "startingPrice": 2100,
+    "sourceLang": "en"
   },
   {
     "id": "B-010",
@@ -1251,14 +1266,15 @@ export const lots: Lot[] = [
     "artistDeathYear": null,
     "estimateLow": 6000,
     "estimateHigh": 9000,
-    "sellerType": "pro",
+    "sellerType": "private",
     "shipping": {
       "france": 35,
-      "eu": 65,
-      "world": 120
+      "eu": 65
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/39268",
-    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)",
+    "startingPrice": 3600,
+    "sourceLang": "fr"
   },
   {
     "id": "C-001",
@@ -1308,11 +1324,13 @@ export const lots: Lot[] = [
     "sellerType": "private",
     "shipping": {
       "france": 18,
-      "eu": 35,
-      "world": 65
+      "eu": 35
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/266362",
-    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)",
+    "startingPrice": 700,
+    "sourceLang": "en",
+    "buyNowPrice": 2150
   },
   {
     "id": "C-002",
@@ -1357,16 +1375,15 @@ export const lots: Lot[] = [
     },
     "dimensions": "Image: 17.9 x 14.6 cm (7 1/16 x 5 3/4 in.)",
     "artistDeathYear": 1909,
-    "estimateLow": 400,
-    "estimateHigh": 600,
     "sellerType": "private",
     "shipping": {
       "france": 18,
-      "eu": 35,
-      "world": 65
+      "eu": 35
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/285902",
-    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)",
+    "startingPrice": 240,
+    "sourceLang": "fr"
   },
   {
     "id": "C-003",
@@ -1413,14 +1430,15 @@ export const lots: Lot[] = [
     "artistDeathYear": 1921,
     "estimateLow": 350,
     "estimateHigh": 550,
-    "sellerType": "pro",
+    "sellerType": "private",
     "shipping": {
       "france": 18,
-      "eu": 35,
-      "world": 65
+      "eu": 35
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/728305",
-    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)",
+    "startingPrice": 210,
+    "sourceLang": "en"
   },
   {
     "id": "C-004",
@@ -1470,11 +1488,13 @@ export const lots: Lot[] = [
     "sellerType": "private",
     "shipping": {
       "france": 18,
-      "eu": 35,
-      "world": 65
+      "eu": 35
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/728169",
-    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)",
+    "startingPrice": 180,
+    "sourceLang": "fr",
+    "buyNowPrice": 600
   },
   {
     "id": "C-005",
@@ -1519,16 +1539,15 @@ export const lots: Lot[] = [
     },
     "dimensions": "Image: 5.6 x 9.0 cm / Mount: 6.4 cm x 10.4 cm",
     "artistDeathYear": null,
-    "estimateLow": 300,
-    "estimateHigh": 450,
     "sellerType": "private",
     "shipping": {
       "france": 18,
-      "eu": 35,
-      "world": 65
+      "eu": 35
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/764802",
-    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)",
+    "startingPrice": 180,
+    "sourceLang": "en"
   },
   {
     "id": "C-006",
@@ -1575,14 +1594,15 @@ export const lots: Lot[] = [
     "artistDeathYear": 1921,
     "estimateLow": 300,
     "estimateHigh": 500,
-    "sellerType": "pro",
+    "sellerType": "private",
     "shipping": {
       "france": 18,
-      "eu": 35,
-      "world": 65
+      "eu": 35
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/728172",
-    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)",
+    "startingPrice": 180,
+    "sourceLang": "fr"
   },
   {
     "id": "C-007",
@@ -1632,11 +1652,13 @@ export const lots: Lot[] = [
     "sellerType": "private",
     "shipping": {
       "france": 18,
-      "eu": 35,
-      "world": 65
+      "eu": 35
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/285442",
-    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)",
+    "startingPrice": 300,
+    "sourceLang": "en",
+    "buyNowPrice": 950
   },
   {
     "id": "D-001",
@@ -1681,16 +1703,15 @@ export const lots: Lot[] = [
     },
     "dimensions": "H. 2 in. (5.1 cm); W. 9 in. (22.9 cm); D. 8 1/2 in. (21.6 cm)",
     "artistDeathYear": null,
-    "estimateLow": 2200,
-    "estimateHigh": 3500,
     "sellerType": "private",
     "shipping": {
       "france": 35,
-      "eu": 65,
-      "world": 120
+      "eu": 65
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/55974",
-    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)",
+    "startingPrice": 1300,
+    "sourceLang": "en"
   },
   {
     "id": "D-002",
@@ -1737,14 +1758,15 @@ export const lots: Lot[] = [
     "artistDeathYear": null,
     "estimateLow": 3500,
     "estimateHigh": 5500,
-    "sellerType": "pro",
+    "sellerType": "private",
     "shipping": {
       "france": 65,
-      "eu": 120,
-      "world": 220
+      "eu": 120
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/829395",
-    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)",
+    "startingPrice": 2100,
+    "sourceLang": "fr"
   },
   {
     "id": "D-003",
@@ -1794,11 +1816,13 @@ export const lots: Lot[] = [
     "sellerType": "private",
     "shipping": {
       "france": 18,
-      "eu": 35,
-      "world": 65
+      "eu": 35
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/54303",
-    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)",
+    "startingPrice": 900,
+    "sourceLang": "en",
+    "buyNowPrice": 3000
   },
   {
     "id": "D-004",
@@ -1843,16 +1867,15 @@ export const lots: Lot[] = [
     },
     "dimensions": "confirmed: 8 1/2 × 5 3/4 × 4 in. (21.6 × 14.6 × 10.2 cm)",
     "artistDeathYear": null,
-    "estimateLow": 600,
-    "estimateHigh": 900,
     "sellerType": "private",
     "shipping": {
       "france": 35,
-      "eu": 65,
-      "world": 120
+      "eu": 65
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/771056",
-    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)",
+    "startingPrice": 360,
+    "sourceLang": "fr"
   },
   {
     "id": "D-005",
@@ -1899,14 +1922,15 @@ export const lots: Lot[] = [
     "artistDeathYear": null,
     "estimateLow": 2500,
     "estimateHigh": 4000,
-    "sellerType": "pro",
+    "sellerType": "private",
     "shipping": {
       "france": 35,
-      "eu": 65,
-      "world": 120
+      "eu": 65
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/826007",
-    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)",
+    "startingPrice": 1500,
+    "sourceLang": "en"
   },
   {
     "id": "D-006",
@@ -1956,11 +1980,13 @@ export const lots: Lot[] = [
     "sellerType": "private",
     "shipping": {
       "france": 65,
-      "eu": 120,
-      "world": 220
+      "eu": 120
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/70769",
-    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)",
+    "startingPrice": 800,
+    "sourceLang": "fr",
+    "buyNowPrice": 2600
   },
   {
     "id": "D-007",
@@ -2005,16 +2031,15 @@ export const lots: Lot[] = [
     },
     "dimensions": "—",
     "artistDeathYear": null,
-    "estimateLow": 900,
-    "estimateHigh": 1400,
     "sellerType": "private",
     "shipping": {
       "france": 65,
-      "eu": 120,
-      "world": 220
+      "eu": 120
     },
     "objectURL": "https://www.metmuseum.org/art/collection/search/83924",
-    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)"
+    "creditLine": "The Metropolitan Museum of Art, Open Access (CC0)",
+    "startingPrice": 500,
+    "sourceLang": "en"
   }
 ];
 

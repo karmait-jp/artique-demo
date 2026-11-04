@@ -19,8 +19,7 @@
 .card-brand { width: 48px; height: 26px; position: absolute; right: 12px; }
 .card-brand svg { display: block; width: 48px; height: 26px; }
 .pay-button { width: 100%; display: flex; justify-content: space-between; }
-.iban { overflow-wrap: anywhere; font-variant-numeric: tabular-nums; font-size: 17px; }
-.sepa-panel { padding: 12px 0; }
+.paypal-panel { padding: 12px 0; }
 .confirmation-page { max-width: 1000px; }
 .confirmation-details { margin: 40px 0; }
 .confirmation-details > div { display: grid; grid-template-columns: 1fr 1.5fr; padding: 18px 0; gap: 24px; border-bottom: 1px solid var(--rule, #c5cdc3); }

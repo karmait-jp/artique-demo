@@ -4,11 +4,9 @@ export interface Increment { from: number; to: number; increment: number }
 
 // Keep deriving rules from the planning document; these defaults keep wording changes safe.
 export const defaultRules = {
-  buyerPremium: 0.15, // B7 — buyer's premium, excluding VAT.
+  buyerPremium: 0.25, // B7 — buyer's premium, excluding VAT.
   vat: 0.20, // C4 — VAT on ARTIQUE's fees.
   sellerCommission: 0.12, // B7 — seller's commission, excluding VAT.
-  minimumEstimate: 300, // B3 — minimum low estimate.
-  startingRatio: 0.60, // B3 — opening price as a share of low estimate.
   increments: [ // B4 — all nine bid increments.
     { from: 0, to: 100, increment: 5 }, // B4
     { from: 100, to: 300, increment: 10 }, // B4
@@ -20,24 +18,17 @@ export const defaultRules = {
     { from: 10_000, to: 20_000, increment: 1_000 }, // B4
     { from: 20_000, to: Infinity, increment: 2_000 }, // B4
   ] as Increment[], // B4
-  antiSnipingMs: 120_000, // B2 — extension measured from the latest bid.
+  antiSnipingMs: 0, // B2 — fixed closing with no extension.
+  maxLotAmount: 9_999, // B12 — per-lot limit for bids, proxy maxima and buy-now.
+  payoutDay: 15, // B9 — confirmations through month-end paid next month on this day.
   lotSpacingMs: 60_000, // B2 — staggered closings.
   saleWindowDays: 10, // B1 — bidding window.
   paymentDays: 3, // B8 — payment deadline.
-  transferRecommendedAbove: 5_000, // B8 — indicative bank-transfer threshold.
-  payoutConfirmedDays: 14, // B9 — seller payout after confirmed delivery.
-  payoutUnconfirmedDays: 21, // B9 — seller payout without delivery confirmation.
-  shippingBusinessDays: 5, // B10 — tracked and insured dispatch.
-  fineArtShippingAbove: 3_000, // B10 — specialist art transport threshold.
   withdrawalDays: 14, // B11 — consumer purchases from professional sellers.
   discrepancyDays: 30, // A8 — illustrative as-described guarantee.
-  identityThreshold: 10_000, // B12 — production identity-verification threshold.
   resaleMinimum: 750, // C3 — minimum hammer price for eligible resale rights.
   resaleFirstRate: 0.04, // C3 — first resale-right band, paid by seller.
-  resaleFirstBand: 50_000, // C3 — top of the first resale-right band.
   resaleYears: 70, // C3 / SPEC §6.3 — artist's death within the copyright term.
-  eurToJpy: 165, // C5 / SPEC §5 — fixed indicative demo exchange rate.
-  eurToUsd: 1.08, // C5 / SPEC §5 — fixed indicative demo exchange rate.
   timeZone: 'Europe/Paris', // A4 — the reference time zone for closing times.
 } as const;
 
@@ -70,38 +61,25 @@ function parseIncrements(): Increment[] {
   return defaultRules.increments;
 }
 export const rules = {
-  buyerPremium: number('B7', /premium (\d+)%/, defaultRules.buyerPremium, 0.01), // B7 — buyer's premium, excluding VAT.
+  buyerPremium: number('B7', /premium (?:provisionally )?(\d+)%/, defaultRules.buyerPremium, 0.01), // B7 — buyer's premium, excluding VAT.
   vat: number('C4', /^(\d+)%/, defaultRules.vat, 0.01), // C4 — VAT on ARTIQUE's fees.
   sellerCommission: number('B7', /commission (\d+)%/, defaultRules.sellerCommission, 0.01), // B7 — seller's commission, excluding VAT.
-  minimumEstimate: number('B3', /estimate €([\d,]+)/, defaultRules.minimumEstimate), // B3 — minimum low estimate.
-  startingRatio: number('B3', /price = (\d+)%/, defaultRules.startingRatio, 0.01), // B3 — opening price as a share of low estimate.
   increments: parseIncrements(), // B4 — all nine bid increments, parsed in source order.
-  antiSnipingMs: number('B2', /last (\d+) minutes/, defaultRules.antiSnipingMs, 60_000), // B2 — extension measured from the latest bid.
+  antiSnipingMs: defaultRules.antiSnipingMs, // B2 — fixed closing with no extension.
+  maxLotAmount: number('B12', /maximum of €([\d,]+)/, defaultRules.maxLotAmount), // B12 — bids, proxy maxima and buy-now cap.
+  payoutDay: number('B9', /on the (\d+)th/, defaultRules.payoutDay), // B9 — monthly payout after confirmed receipt.
   lotSpacingMs: number('B2', /(\d+) seconds apart/, defaultRules.lotSpacingMs, 1_000), // B2 — staggered closings.
   saleWindowDays: number('B1', /(\d+)-day/, defaultRules.saleWindowDays), // B1 — bidding window.
   paymentDays: number('B8', /within (\d+) days/, defaultRules.paymentDays), // B8 — payment deadline.
-  transferRecommendedAbove: number('B8', /above €([\d,]+)/, defaultRules.transferRecommendedAbove), // B8 — indicative bank-transfer threshold.
-  payoutConfirmedDays: number('B9', /^(\d+) days/, defaultRules.payoutConfirmedDays), // B9 — seller payout after confirmed delivery.
-  payoutUnconfirmedDays: number('B9', /or (\d+) days/, defaultRules.payoutUnconfirmedDays), // B9 — seller payout without delivery confirmation.
-  shippingBusinessDays: number('B10', /within (\d+) business days/, defaultRules.shippingBusinessDays), // B10 — tracked and insured dispatch.
-  fineArtShippingAbove: number('B10', /above €([\d,]+)/, defaultRules.fineArtShippingAbove), // B10 — specialist art transport threshold.
-  withdrawalDays: number('B11', /^(\d+)-day/, defaultRules.withdrawalDays), // B11 — consumer purchases from professional sellers.
+  withdrawalDays: number('B11', /a (\d+)-day/, defaultRules.withdrawalDays), // B11 — consumer purchases from professional sellers.
   discrepancyDays: number('A8', /within (\d+) days/, defaultRules.discrepancyDays), // A8 — illustrative as-described guarantee.
-  identityThreshold: number('B12', /reach €([\d,]+)/, defaultRules.identityThreshold), // B12 — production identity-verification threshold.
   resaleMinimum: number('C3', /from €([\d,]+)/, defaultRules.resaleMinimum), // C3 — minimum hammer price for eligible resale rights.
   resaleFirstRate: number('C3', /\((\d+)%/, defaultRules.resaleFirstRate, 0.01), // C3 — first resale-right band, paid by seller.
-  resaleFirstBand: number('C3', /first €([\d,]+)/, defaultRules.resaleFirstBand), // C3 — top of the first resale-right band.
   resaleYears: defaultRules.resaleYears, // C3 / SPEC §6.3 — artist's death within the copyright term.
-  eurToJpy: defaultRules.eurToJpy, // C5 / SPEC §5 — fixed indicative demo exchange rate.
-  eurToUsd: defaultRules.eurToUsd, // C5 / SPEC §5 — fixed indicative demo exchange rate.
   timeZone: defaultRules.timeZone, // A4 — the reference time zone for closing times.
 } as const;
 export const incrementFor = (amount: number): number =>
   rules.increments.find((band) => amount >= band.from && amount < band.to)?.increment ?? rules.increments[0].increment;
-export const startingPrice = (lowEstimate: number): number => {
-  const raw = Math.max(rules.minimumEstimate, lowEstimate) * rules.startingRatio;
-  return Math.floor(raw / incrementFor(raw)) * incrementFor(raw);
-};
 const cents = (amount: number): number => Math.round(amount * 100) / 100;
 export function costs(hammer: number, shipping = 0) {
   const premium = cents(hammer * rules.buyerPremium);

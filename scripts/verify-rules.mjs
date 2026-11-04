@@ -44,11 +44,39 @@ for (const transform of [
   assert.equal(result.warnings.length, 1);
   assert.match(result.warnings[0], /B4/);
 }
-const nonfinite = await loadRules(replaceValue('B2', value => value.replace('last 2 minutes', `last ${'9'.repeat(400)} minutes`)));
+const nonfinite = await loadRules(replaceValue('B2', value => value.replace('60 seconds apart', `${'9'.repeat(400)} seconds apart`)));
 assert.deepEqual(nonfinite.rules, nonfinite.defaultRules, 'Non-finite numeric matches fall back');
 assert.equal(nonfinite.warnings.length, 1);
 assert.match(nonfinite.warnings[0], /B2/);
-const changed = await loadRules(replaceValue('B7', value => value.replace('premium 15%', 'premium 16%')));
-assert.equal(changed.rules.buyerPremium, 0.16, 'Valid values still come from assumptions');
+const changed = await loadRules(replaceValue('B7', value => value.replace('premium provisionally 25%', 'premium provisionally 26%')));
+assert.equal(changed.rules.buyerPremium, 0.26, 'Valid values still come from assumptions');
 assert.deepEqual(changed.warnings, []);
-console.log('Rules verification passed: current values match defaults, parsing remains live, and invalid or missing assumptions safely fall back with one warning per ID.');
+
+
+const changedCap=await loadRules(replaceValue('B12',value=>value.replace('€9,999','€8,999')));
+assert.equal(changedCap.rules.maxLotAmount,8999);
+const changedPayout=await loadRules(replaceValue('B9',value=>value.replace('15th','16th')));
+assert.equal(changedPayout.rules.payoutDay,16);
+assert.equal(current.rules.antiSnipingMs,0);
+
+async function loadModule(path) {
+  const result=await build({entryPoints:[path],bundle:true,write:false,platform:'node',format:'esm',logLevel:'silent'});
+  return import(`data:text/javascript;base64,${Buffer.from(result.outputFiles[0].text).toString('base64')}`);
+}
+const {matchingVocabulary}=await loadModule('src/data/vocabulary.ts');
+for(const [phrase,id] of [
+  ['Signé Hiroshige','signed'],['Photographie signée','signed'],['signed print','signed'],['署名あり','signed'],
+  ['Attribué à un artiste','attributed'],['attributed to','attributed'],['伝 山田','attributed'],
+  ['École de Paris','school'],['school of','school'],['Atelier de','workshop'],['workshop of','workshop'],
+  ["D’après",'after'],['after','after'],['dans le goût de','manner'],['in the manner of','manner'],
+  ['période Edo','period'],['circa 19th century','period'],['circa XIXe siècle','period'],
+]) assert.ok(matchingVocabulary(phrase).some(term=>term.id===id),`Vocabulary warning for ${phrase}`);
+assert.equal(matchingVocabulary('An unsigned print on paper').length,0);
+assert.equal(matchingVocabulary('circa').length,0);
+const {frenchAssumptions}=await loadModule('src/i18n/support.ts');
+assert.equal(Object.keys(frenchAssumptions).length,assumptions.items.length);
+for(const item of assumptions.items) {
+  assert.ok(frenchAssumptions[item.id]?.label&&frenchAssumptions[item.id]?.value,`French translation ${item.id}`);
+  assert.ok(assumptions.statuses[item.status]);
+}
+console.log('Rules verification passed: numeric parsing and fallbacks, current fees and caps, monthly payout, vocabulary in all listing languages, and all French assumptions.');

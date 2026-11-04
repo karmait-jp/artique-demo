@@ -1,8 +1,8 @@
 import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from 'react';
 import { lots, type Lang } from '../data/lots';
-import { incrementFor } from '../config/rules';
+import { rules } from '../config/rules';
 import {
-  applyBid, applyDueRivals, applyRival, loadState, lotStatus, makeOrder, nextMinimum,
+  applyBid, applyBuyNow, applyDueRivals, applyRival, loadState, lotStatus, makeOrder, nextMinimum,
   seedState, STORAGE_KEY, type AuctionState, type BidResult, type Order,
   type PaymentMethod, type Registration, type Shipping,
 } from './engine';
@@ -14,6 +14,7 @@ interface AuctionContextValue {
   acceptCookies: () => void;
   register: (registration: Registration) => void;
   placeBid: (lotId: string, amount: number, proxy?: boolean) => BidResult;
+  buyNow: (lotId: string) => BidResult;
   toggleWatch: (lotId: string) => void;
   reset: () => void;
   closeLot: (lotId: string) => void;
@@ -65,14 +66,26 @@ export function AuctionProvider({ children }: { children: ReactNode }) {
     if (!lot) return { ok: false, error: 'closed' };
     const result = applyBid(lot, 'you', amount, proxy, timestamp);
     if (!result.lot) { commit(() => current); return result; }
-    const next: AuctionState = { ...current, lots: { ...current.lots, [lotId]: result.lot } };
+    const next: AuctionState = { ...current, lots: { ...current.lots, [lotId]: result.lot }, pendingRivals: result.lot.endsAt <= timestamp ? current.pendingRivals.filter(pending => pending.lotId !== lotId) : current.pendingRivals };
     const count = reactions.current[lotId] ?? 0;
-    if (count < 2 && !next.pendingRivals.some((pending) => pending.lotId === lotId) && Math.random() < 0.6) {
+    if (result.lot.endsAt > timestamp && count < 2 && !next.pendingRivals.some((pending) => pending.lotId === lotId) && Math.random() < 0.6) {
       reactions.current[lotId] = count + 1;
       const delay = 8_000 + Math.floor(Math.random() * 32_001);
       next.pendingRivals = [...next.pendingRivals, { id: `${lotId}-${timestamp}-${count}`, lotId, at: timestamp + delay, bidder: Math.floor(0x1000 + Math.random() * 0xefff).toString(16).toUpperCase() }];
     }
     commit(() => next);
+    setNow(timestamp);
+    return result;
+  };
+  const buyNow = (lotId: string): BidResult => {
+    const timestamp = Date.now();
+    const current = applyDueRivals(stateRef.current, timestamp);
+    if (!current.registered) return { ok: false, error: 'registration' };
+    const lot = current.lots[lotId];
+    if (!lot) return { ok: false, error: 'closed' };
+    const result = applyBuyNow(lot, 'you', timestamp);
+    if (result.lot) commit(() => ({ ...current, lots: { ...current.lots, [lotId]: result.lot! }, pendingRivals: current.pendingRivals.filter(pending => pending.lotId !== lotId) }));
+    else commit(() => current);
     setNow(timestamp);
     return result;
   };
@@ -95,12 +108,12 @@ export function AuctionProvider({ children }: { children: ReactNode }) {
     setNow(timestamp);
   };
   const checkoutExample = (): string => {
-    const target = lots.find((lot) => lot.saleId === 'A') ?? lots[0];
+    const target = lots.find((lot) => lot.saleId === 'C') ?? lots[0];
     const timestamp = Date.now();
     commit((current) => {
       const entry = current.lots[target.id];
-      const amount = Math.max(nextMinimum(entry), entry.reserve ?? 0, entry.visitorMax ?? 0);
-      const prepared = { ...entry, currentBid: amount, leader: 'you', visitorMax: amount, maxima: { ...entry.maxima, you: amount + incrementFor(amount) }, participated: true, endsAt: timestamp - 1, bids: [...entry.bids, { bidder: 'you', amount, at: timestamp - 2, proxy: false }] };
+      const amount = Math.min(rules.maxLotAmount, Math.max(nextMinimum(entry), entry.reserve ?? 0, entry.visitorMax ?? 0));
+      const prepared = { ...entry, currentBid: amount, leader: 'you', visitorMax: amount, maxima: { ...entry.maxima, you: amount }, participated: true, endsAt: timestamp - 1, bids: [...entry.bids, { bidder: 'you', amount, at: timestamp - 2, proxy: false }] };
       const orders = { ...current.orders };
       delete orders[target.id];
       return { ...current, lots: { ...current.lots, [target.id]: prepared }, orders, pendingRivals: current.pendingRivals.filter((pending) => pending.lotId !== target.id) };
@@ -119,7 +132,7 @@ export function AuctionProvider({ children }: { children: ReactNode }) {
     return order;
   };
   return <AuctionContext.Provider value={{
-    state, now, placeBid, closeLot, triggerRival, checkoutExample, completeOrder,
+    state, now, placeBid, buyNow, closeLot, triggerRival, checkoutExample, completeOrder,
     setLanguage: (language) => commit((current) => ({ ...current, language })),
     acceptCookies: () => commit((current) => ({ ...current, cookieAccepted: true })),
     register: (registered) => commit((current) => ({ ...current, registered })),
